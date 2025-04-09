@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 
 interface ServiceCardProps {
   image: string
@@ -23,9 +24,11 @@ export default function ServiceCard({ image, description, link }: ServiceCardPro
     >
       <div className="relative overflow-hidden">
         <div className="aspect-[1220/686] w-full overflow-hidden">
-          <img
+          <Image
             src={image || "/placeholder.svg"}
             alt="Service"
+            width={500}
+            height={300}
             className={cn(
               "h-full w-full object-cover transition-transform duration-700",
               isHovered ? "scale-105" : "scale-100",

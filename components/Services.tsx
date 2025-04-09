@@ -48,7 +48,7 @@ const allServices = [
   },
   {
     image: "/assets/services/logo.jpg",
-    description: "Compelling content that tells your brand story and connects with your audience across all platforms.",
+    description: "Compeling content that tells your brand story and connects with your audience across all platforms.",
     link: "/services/content-creation",
   },
 

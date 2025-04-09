@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import projects from "@/data/projects"; 
+import projects from "@/data/projects";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -52,13 +52,19 @@ const ProjectTabs = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Image
-                      className="lg:h-48 md:h-36 w-full object-cover"
-                      src={project.image || "/assets/placeholder.png"}
-                      alt={project.title}
-                      width={500}
-                      height={300}
-                    />
+                    <div className="relative aspect-[1220/686] w-full overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt="Service"
+                        width={500}
+                        height={300}
+                        className={
+                          "h-full w-full object-cover transition-transform duration-700"
+                        }
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#212428] to-transparent opacity-70" />
+                    </div>
+
                     <div className="p-6">
                       <h1 className="text-xl font-semibold text-white mb-2">
                         {project.title}
