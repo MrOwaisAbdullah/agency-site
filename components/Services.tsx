@@ -7,49 +7,57 @@ import { Button } from "@/components/ui/button"
 const allServices = [
   {
     image: "/assets/services/web-development.jpg",
+    title: "Web Development",
     description:
       "Custom web development with cutting-edge technologies to create responsive, high-performance websites.",
     link: "/services/web-development",
   },
   {
-    image: "/assets/services/influencer.jpg",
+    image: "/assets/services/influencer-marketing.jpg",
+    title: "Influencer Marketing",
     description: "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
-    link: "/services/analytics",
+    link: "/services/influencer-marketing",
   },
   {
     image: "/assets/services/app-development.jpg",
+    title: "App Development", 
     description:
       "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
     link: "/services/app-development",
   },
   {
     image: "/assets/services/seo.jpg",
+    title: "SEO",
     description:
       "Strategic digital solutions tailored to elevate your brand's online presence and drive measurable results.",
-    link: "/services/digital-strategy",
+    link: "/services/seo",
   },
   {
     image: "/assets/services/ui-ux.jpg",
+    title: "UI/UX Design",
     description:
       "User-centered design that creates intuitive, engaging interfaces to enhance user satisfaction and conversion.",
     link: "/services/ui-ux-design",
   },
   {
-    image: "/assets/services/marketing.jpg",
+    image: "/assets/services/digital-marketing.jpg",
+    title: "Digital Marketing",
     description:
       "Data-driven marketing campaigns that connect with your audience and convert visitors into loyal customers.",
     link: "/services/digital-marketing",
   },
   {
     image: "/assets/services/events.jpg",
+    title: "Events Management",
     description:
       "Strategic social media management to build community, increase engagement, and drive brand awareness.",
-    link: "/services/social-media",
+    link: "/services/events-management",
   },
   {
     image: "/assets/services/logo.jpg",
+    title: "Logo Design",
     description: "Compeling content that tells your brand story and connects with your audience across all platforms.",
-    link: "/services/content-creation",
+    link: "/services/logo-design",
   },
 
 ]
