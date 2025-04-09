@@ -39,7 +39,7 @@ export default function ServiceCard({ image, description, link }: ServiceCardPro
         <p className="mb-4 text-[#e5e7eb]">{description}</p>
 
         <Link href={link} className="group inline-flex items-center text-[#3a69ff] transition-all hover:text-white">
-          <span className="mr-2 font-medium">Learn more</span>
+          <span className="mr-2 font-medium">Read more</span>
           <ArrowRight
             className={cn("h-4 w-4 transition-all duration-300", isHovered ? "translate-x-1" : "translate-x-0")}
           />

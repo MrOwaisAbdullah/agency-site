@@ -6,22 +6,15 @@ import { Button } from "@/components/ui/button"
 
 const allServices = [
   {
-    image: "/assets/services/seo.jpg",
-    description:
-      "Strategic digital solutions tailored to elevate your brand's online presence and drive measurable results.",
-    link: "/services/digital-strategy",
-  },
-  {
     image: "/assets/services/web-development.jpg",
     description:
       "Custom web development with cutting-edge technologies to create responsive, high-performance websites.",
     link: "/services/web-development",
   },
   {
-    image: "/assets/services/marketing.jpg",
-    description:
-      "Data-driven marketing campaigns that connect with your audience and convert visitors into loyal customers.",
-    link: "/services/digital-marketing",
+    image: "/assets/services/influencer.jpg",
+    description: "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
+    link: "/services/analytics",
   },
   {
     image: "/assets/services/app-development.jpg",
@@ -30,10 +23,22 @@ const allServices = [
     link: "/services/app-development",
   },
   {
+    image: "/assets/services/seo.jpg",
+    description:
+      "Strategic digital solutions tailored to elevate your brand's online presence and drive measurable results.",
+    link: "/services/digital-strategy",
+  },
+  {
     image: "/assets/services/ui-ux.jpg",
     description:
       "User-centered design that creates intuitive, engaging interfaces to enhance user satisfaction and conversion.",
     link: "/services/ui-ux-design",
+  },
+  {
+    image: "/assets/services/marketing.jpg",
+    description:
+      "Data-driven marketing campaigns that connect with your audience and convert visitors into loyal customers.",
+    link: "/services/digital-marketing",
   },
   {
     image: "/assets/services/events.jpg",
@@ -46,11 +51,7 @@ const allServices = [
     description: "Compelling content that tells your brand story and connects with your audience across all platforms.",
     link: "/services/content-creation",
   },
-  {
-    image: "/assets/services/influencer.jpg",
-    description: "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
-    link: "/services/analytics",
-  },
+
 ]
 
 const Services = () => {

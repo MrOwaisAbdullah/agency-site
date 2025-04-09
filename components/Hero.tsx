@@ -47,12 +47,12 @@ const Hero = () => {
               to ignore — online and offline.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2">
-              <Link href="#projects" className="scroll-smooth duration-300">
+              <Link href="/projects" className="scroll-smooth duration-300">
                 <button className="group flex items-center border-2 border-transparent hover:border-white/40 text-white py-2 bg-black/30 rounded-full font-medium text-lg px-8">
                   See Our Work
                 </button>
               </Link>
-              <Link href="#contact" className="scroll-smooth duration-300">
+              <Link href="/contact" className="scroll-smooth duration-300">
                 <button className="group flex items-center border-2 border-transparent hover:border-black/50 text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 py-2 hover:bg-blue-500 hover:bg-gradient-to-tr rounded-full font-medium text-lg px-8">
                   Get a Free Consultation
                 </button>
@@ -62,17 +62,17 @@ const Hero = () => {
 
           <div className="lg:max-w-full md:w-2/5 sm:pt-0 md:ml-0 relative">
             {/* Image highlight effects */}
-            <div className="absolute -z-10 inset-0 blur-[60px] bg-gradient-to-tr from-accent/20 via-blue-600/10 to-transparent rounded-full scale-90 opacity-70 "></div>
+            <div className="absolute animate-blob -z-10 inset-0 blur-[60px] bg-gradient-to-tr from-accent/20 via-blue-600/10 to-transparent rounded-full scale-90 opacity-70 "></div>
 
             {/* Decorative elements around image */}
-            <div className="absolute bottom-7 -left-3 w-36 h-36 bg-accent/10 rounded-full"></div>
+            <div className="absolute bottom-7 -left-3 w-36 h-36 bg-accent/10 rounded-full animate-float"></div>
 
             {/* Small decorative elements around the image - Increased opacity and size */}
-            <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/40 rounded-md rotate-45 animation-delay-3000 animate-spin-slow z-50"></div>
+            <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/40 rounded-md animation-delay-3000 animate-spin-slow z-50"></div>
 
             {/* Subtle accent lines */}
-            <div className="absolute top-1/2 -left-10 w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
-            <div className="absolute top-[37%] -right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent"></div>
+            <div className="absolute top-1/2 -left-10 w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-pulse"></div>
+            <div className="absolute top-[37%] -right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent animate-pulse"></div>
 
             <div className="flex flex-row justify-center items-center relative z-10">
               <AnimatedTooltip
