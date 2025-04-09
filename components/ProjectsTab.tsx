@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import projects from "@/data/projects"; // Assuming your projects object is stored in /data/projects.ts
+import projects from "@/data/projects"; 
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
