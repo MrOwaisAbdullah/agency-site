@@ -65,14 +65,14 @@ const Hero = () => {
             <div className="absolute animate-blob -z-10 inset-0 blur-[60px] bg-gradient-to-tr from-accent/20 via-blue-600/10 to-transparent rounded-full scale-90 opacity-70 "></div>
 
             {/* Decorative elements around image */}
-            <div className="absolute bottom-7 -left-3 w-36 h-36 bg-accent/10 rounded-full animate-float"></div>
+            <div className="absolute bottom-2 md:bottom-7 -left-3 w-36 h-36 bg-accent/10 rounded-full animate-float"></div>
 
             {/* Small decorative elements around the image - Increased opacity and size */}
             <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/40 rounded-md animation-delay-3000 animate-spin-slow z-50"></div>
 
             {/* Subtle accent lines */}
-            <div className="absolute top-1/2 -left-10 w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-pulse"></div>
-            <div className="absolute top-[37%] -right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent animate-pulse"></div>
+            <div className="absolute top-1/2 -left-4 md:-left-10 w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-pulse"></div>
+            <div className="absolute top-[37%] -right-4 md:-right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent animate-pulse"></div>
 
             <div className="flex flex-row justify-center items-center relative z-10">
               <AnimatedTooltip

@@ -85,7 +85,7 @@ const Header = () => {
             Our Projects
           </Link>
 
-          <button className="group inline-flex items-center font-bold bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr text-white border-0 py-4 px-6 sm:py-2 sm:px-4 focus:outline-none duration-500 rounded-full text-base mt-4 md:mt-0 ml-10">
+          <button className="group inline-flex items-center font-bold bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr text-white border-0 py-4 px-6 sm:py-2 sm:px-4 focus:outline-none duration-500 rounded-full text-base mt-4 md:mt-0 md:ml-10 ">
             <Link href={"/contact"} onClick={handleLinkClick}>
               GET A FREE QUOTE
             </Link>

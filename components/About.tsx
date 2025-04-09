@@ -18,7 +18,7 @@ const About = () => {
       <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
       At Burraq Digits, we craft digital experiences that bring real results. From branding to performance Burraq Digits is your go-to partner for creative solutions that actually move the needle. We mix smart strategy with bold design to help businesses build strong brands, grow online, and connect with the right audience. From startups to global clients, we bring fresh ideas and solid execution every time.
       </p>
-      <div className="flex justify-center md:justify-start md:mt-4 mt-6">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start md:mt-4 mt-6">
         <Link href="/contact">
         <button className="inline-flex font-semibold text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr border-0 py-2 px-4 focus:outline-none rounded-full">
         Talk to Us
