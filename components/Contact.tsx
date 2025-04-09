@@ -14,7 +14,7 @@ const Contact = () => {
             className="rounded-md mb-5 object-cover w-full h-52 md:h-64"
           />
           <h2 className="font-semibold text-text text-2xl sm:text-3xl">
-            OWAIS ABDULLAH
+            BURRAQ DIGITS
           </h2>
           <div className="mt-4 space-y-2">
             <div>
@@ -26,10 +26,10 @@ const Contact = () => {
                 EMAIL
               </h2>
               <Link
-                href="mailto:owais@oneklickdigi.com"
+                href="mailto:contact@burraqdigits.com"
                 className="text-accent leading-relaxed"
               >
-                owais@oneklickdigi.com
+                contact@burraqdigits.com
               </Link>
             </div>
             <div>
@@ -37,15 +37,19 @@ const Contact = () => {
                 PHONE
               </h2>
               <Link href={"tel:+923262283140"}>
-                <p className="leading-relaxed">+923262283140</p>
+                <p className="leading-relaxed">+92326234432</p>
               </Link>
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 w-full bg-background flex flex-col md:ml-auto md:py-8 mt-8 md:mt-0 font-montserrat">
-          <h2 className="text-text text-2xl mb-1 font-semibold title-font">
-            CONNECT WITH ME
+
+        <div className="md:w-1/2 w-full bg-background flex flex-col md:ml-auto mt-8 md:mt-0 font-montserrat">
+        <h2 className="font-semibold text-text text-2xl sm:text-3xl">
+            LET&apos;S TALK
           </h2>
+          <p className="mt-1 mb-6 text-sm">
+            We are here to help you. Let us know how we can assist you.
+          </p>
           <form action="https://formspree.io/f/xnnqvnzl" method="POST">
             <div className="relative mb-4 ">
               <label htmlFor="name" className="leading-7 text-sm text-gray-400">

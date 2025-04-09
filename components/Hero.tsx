@@ -9,30 +9,6 @@ import { AnimatedTooltip } from "./ui/AnimatedTooltip";
 const Hero = () => {
   return (
     <section className="relative text-gray-600 overflow-hidden z-0 -mt-24">
-      {/* Modern gradient effects and decorative elements */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        {/* Primary gradient sphere - more sophisticated gradient */}
-        <div className="absolute top-[15%] right-[10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-accent/10 via-blue-600/5 to-transparent blur-[120px] opacity-80"></div>
-
-        {/* Secondary gradient - more subtle and layered */}
-        <div className="absolute bottom-[10%] left-[5%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-blue-900/5 via-accent/10 to-transparent blur-[100px] opacity-70"></div>
-
-        {/* Accent highlight - smaller, more focused */}
-        <div className="absolute top-[40%] right-[30%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[50px] opacity-60"></div>
-
-        {/* Subtle dot pattern overlay */}
-        <div className="absolute inset-0 bg-dot-thick bg-accent/[0.03] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
-        {/* Modern geometric elements */}
-        <div className="absolute top-[20%] left-[15%] w-32 h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent rotate-[30deg]"></div>
-        <div className="absolute bottom-[30%] right-[20%] w-32 h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent rotate-[-30deg]"></div>
-        <div className="absolute top-[60%] left-[25%] w-16 h-16 border border-accent/10 rounded-full"></div>
-        <div className="absolute top-[25%] right-[15%] w-24 h-24 border border-accent/5 rounded-full"></div>
-
-        {/* Subtle grid lines */}
-        <div className="absolute inset-0 [background-image:linear-gradient(to_right,#3a69ff10_1px,transparent_1px),linear-gradient(to_bottom,#3a69ff10_1px,transparent_1px)] [background-size:40px_40px] opacity-20"></div>
-      </div>
-
       <HeroHighlight>
         <div className="max-w-7xl mx-auto flex px-5 pt-40 py-10 md:flex-row flex-col items-center">
           <div className="sm:entrance-left lg:flex-grow md:w-1/2 lg:pr-16 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center lg:w-3/5">
@@ -58,8 +34,8 @@ const Hero = () => {
                     loop={0}
                     cursor
                     cursorStyle="|"
-                    typeSpeed={140}
-                    deleteSpeed={100}
+                    typeSpeed={120}
+                    deleteSpeed={80}
                     delaySpeed={1200}
                   />
                 </span>
@@ -89,14 +65,14 @@ const Hero = () => {
             <div className="absolute -z-10 inset-0 blur-[60px] bg-gradient-to-tr from-accent/20 via-blue-600/10 to-transparent rounded-full scale-90 opacity-70 "></div>
 
             {/* Decorative elements around image */}
-            <div className="absolute -top-5 -right-5 w-20 h-20 border border-accent/10 rounded-full"></div>
-            <div className="absolute -bottom-5 -left-5 w-16 h-16 border border-accent/10 rounded-full"></div>
+            <div className="absolute bottom-7 -left-3 w-36 h-36 bg-accent/10 rounded-full"></div>
+
             {/* Small decorative elements around the image - Increased opacity and size */}
-            <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/20 rounded-md rotate-45 animation-delay-3000 animate-spin-slow z-50"></div>
+            <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/40 rounded-md rotate-45 animation-delay-3000 animate-spin-slow z-50"></div>
 
             {/* Subtle accent lines */}
             <div className="absolute top-1/2 -left-10 w-20 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
-            <div className="absolute top-1/2 -right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent"></div>
+            <div className="absolute top-[37%] -right-10 w-20 h-[1px] bg-gradient-to-l from-transparent via-accent/30 to-transparent"></div>
 
             <div className="flex flex-row justify-center items-center relative z-10">
               <AnimatedTooltip

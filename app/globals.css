@@ -129,6 +129,6 @@
 
 /* Optional: Add this to ensure smooth rendering */
 .slider {
-  animation: scroll 19s linear infinite;
+  animation: scroll 10s linear infinite;
   will-change: transform;
 }
