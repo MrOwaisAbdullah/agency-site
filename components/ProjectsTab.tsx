@@ -54,7 +54,7 @@ const ProjectTabs = () => {
                   >
                     <Image
                       className="lg:h-48 md:h-36 w-full object-cover"
-                      src={project.image}
+                      src={project.image || "/assets/placeholder.png"}
                       alt={project.title}
                       width={500}
                       height={300}
