@@ -118,7 +118,7 @@ export default function WebDevelopmentService() {
             exceptional results for our clients.
           </p>
 
-          <Projects service="Next.js" />
+          <Projects service="WordPress" />
         </FadeInSection>
         </section>
       {/* Why Choose Us Section */}
