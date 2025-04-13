@@ -13,7 +13,7 @@ import Logo from "../public/assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="max-w-7xl mx-auto bg-[#212428] text-white">
+    <footer className="font-poppins max-w-7xl mx-auto bg-[#212428] text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-3">
           {/* Column 1: Contact & Company Info */}

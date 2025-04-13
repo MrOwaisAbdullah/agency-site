@@ -18,7 +18,7 @@ export default function ServiceCard({ image, description, link }: ServiceCardPro
 
   return (
     <Card
-      className="group overflow-hidden border-0 text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3a69ff]/20"
+      className="font-poppins group overflow-hidden border-0 text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#3a69ff]/20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

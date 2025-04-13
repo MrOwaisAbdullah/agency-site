@@ -20,7 +20,7 @@ const About = () => {
             </h2>
           </div>
           <div className="md:-mt-24 md:w-3/5 md:pl-6 justify-self-end">
-            <p className="leading-relaxed text-center md:text-left text-base text-gray-500">
+            <p className="leading-relaxed text-center md:text-left text-base text-gray-500 font-poppins">
               At Burraq Digits, we craft digital experiences that bring real
               results. From branding to performance Burraq Digits is your go-to
               partner for creative solutions that actually move the needle. We
@@ -31,13 +31,13 @@ const About = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start md:mt-4 mt-6">
               <Link href="/contact">
-                <button className="flex items-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-8 rounded-full font-medium md:text-lg transition-all duration-300 transform shadow-lg shadow-accent/20">
+                <button className="font-poppins flex items-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-8 rounded-full font-medium md:text-lg transition-all duration-300 transform shadow-lg shadow-accent/20">
                   Talk to Us
                 </button>
               </Link>
               <Link
                 href="/contact"
-                className="group text-accent-500 inline-flex items-center ml-4"
+                className="font-poppins group text-accent-500 inline-flex items-center ml-4"
               >
                 Let&apos;s build something amazing together.
                 <span className="group-hover:-rotate-45 ml-5 duration-300 group-hover:text-accent">

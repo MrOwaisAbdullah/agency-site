@@ -63,7 +63,7 @@ const Hero = () => {
               that makes your brand look sharp, sound bold, and feel impossible
               to ignore — online and offline.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2">
+            <div className="font-poppins flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2">
               <Link href="/projects" className="scroll-smooth duration-300">
                 <button className="group flex items-center border-2 border-transparent hover:border-white/40 text-white py-2 bg-black/30 rounded-full font-medium text-lg px-8">
                   See Our Work

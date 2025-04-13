@@ -14,7 +14,7 @@ export interface CtaCardProps {
         <h4 className="text-xl font-bold mb-4 font-montserrat">{title}</h4>
         <p className="text-gray-400 mb-6 font-poppins">{description}</p>
         <Link href={buttonLink}>
-          <button className="flex items-center gap-2 bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-4 rounded-full md:text-md transition-all duration-300 transform shadow-lg shadow-accent/20">
+          <button className="font-poppins flex items-center gap-2 bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-4 rounded-full md:text-md transition-all duration-300 transform shadow-lg shadow-accent/20">
             {buttonText} <ArrowRight size={16} />
           </button>
         </Link>

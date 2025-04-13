@@ -40,7 +40,7 @@ export default function CtaSection({
               {paragraph}
             </p>
             <Link href={buttonLink}>
-              <button className="bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-3 px-8 rounded-full font-medium md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-accent/20">
+              <button className="font-poppins bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-3 px-8 rounded-full font-medium md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-accent/20">
                 {buttonText}
               </button>
             </Link>

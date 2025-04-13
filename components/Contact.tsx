@@ -114,7 +114,7 @@ const Contact = () => {
               SEND MESSAGE
             </button>
           </form>
-          <p className="text-xs text-center text-gray-500 mt-5">
+          <p className="font-poppins text-xs text-center text-gray-500 mt-5">
             Send me a message, and I&apos;ll contact you shortly.
           </p>
         </div>
