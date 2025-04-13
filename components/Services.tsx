@@ -88,12 +88,12 @@ const Services = () => {
 
         {hasMoreServices && (
           <div className="mt-12 flex justify-center">
-            <Button
+            <button
               onClick={handleLoadMore}
-              className="bg-accent hover:bg-accent/90 text-white px-8 py-2 rounded-md transition-all"
+              className="flex items-center text-center justify-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-6 rounded transition-all duration-300 transform shadow-lg shadow-accent/20 text-md font-semibold"
             >
               Load More
-            </Button>
+            </button>
           </div>
         )}
       </div>

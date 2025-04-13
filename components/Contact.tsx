@@ -108,7 +108,7 @@ const Contact = () => {
                 required
               />
             </div>
-            <button className="w-full text-white bg-gradient-to-br from-blue-400 via-accent to-blue-400 from-[0%] via-[10%] border-0 py-4 px-6 focus:outline-none hover:bg-text hover:scale-105 duration-300 ease-out rounded text-md font-semibold">
+            <button className="w-full flex items-center text-center justify-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-900 py-4 px-8 rounded transition-all duration-300 transform shadow-lg shadow-accent/20 text-md font-semibold">
               SEND MESSAGE
             </button>
           </form>

@@ -20,7 +20,7 @@ const About = () => {
       </p>
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:justify-start md:mt-4 mt-6">
         <Link href="/contact">
-        <button className="inline-flex font-semibold text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-950 hover:bg-blue-500 hover:bg-gradient-to-tr border-0 py-2 px-4 focus:outline-none rounded-full">
+        <button className="flex items-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-8 rounded-full font-medium md:text-lg transition-all duration-300 transform shadow-lg shadow-accent/20">
         Talk to Us
         </button>
         </Link>
