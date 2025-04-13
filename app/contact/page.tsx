@@ -1,9 +1,10 @@
-import React from 'react'
-import Contact from '@/components/Contact'
-const contact = () => {
-  return (
-    <Contact />
-  )
-}
+import React from "react";
+import Contact from "@/components/Contact";
 
-export default contact
+export const dynamic = "force-static";
+
+const contact = () => {
+  return <Contact />;
+};
+
+export default contact;

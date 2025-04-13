@@ -2,6 +2,8 @@ import React from "react";
 import About from "@/components/About";
 import CtaSection from "@/components/CtaSection";
 
+export const dynamic = "force-static";
+
 const about = () => {
   return (
     <>

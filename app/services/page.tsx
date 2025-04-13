@@ -2,6 +2,8 @@ import CtaSection from "@/components/CtaSection";
 import Services from "@/components/Services";
 import React from "react";
 
+export const dynamic = "force-static";
+
 const projects = () => {
   return (
     <>

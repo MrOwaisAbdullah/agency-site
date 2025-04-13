@@ -1,6 +1,9 @@
 import React from "react";
 import ProjectsTab from "@/components/ProjectsTab";
 import CtaSection from "@/components/CtaSection";
+
+export const dynamic = "force-static";
+
 const projects = () => {
   return (
     <>
