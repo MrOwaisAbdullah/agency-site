@@ -37,7 +37,7 @@ const About = () => {
               </Link>
               <Link
                 href="/contact"
-                className="font-poppins group text-accent-500 inline-flex items-center ml-4"
+                className="font-poppins hidden xs:inline-flex group text-accent-500 items-center ml-4"
               >
                 Let&apos;s build something amazing together.
                 <span className="group-hover:-rotate-45 ml-5 duration-300 group-hover:text-accent">
