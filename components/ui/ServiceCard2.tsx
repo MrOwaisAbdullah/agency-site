@@ -1,5 +1,5 @@
 interface ServiceCardProps {
-  icon: React.ElementType<any>;
+  icon: React.ElementType;
   title: string;
   description: string;
 }
