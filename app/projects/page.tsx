@@ -5,6 +5,7 @@ const projects = () => {
   return (
     <>
       <ProjectsTab />
+      <div className="h-44"></div>
       {/* CTA Section */}
       <CtaSection
         title="Elevate Your Online Presence with Burraq Digits"
