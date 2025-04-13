@@ -43,7 +43,7 @@ const Projects = ({ service }: { service: ServiceType }) => {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-3">
-                {project.tags.map((tag: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined, i: React.Key | null | undefined) => (
+                {project.tags.map((tag: string | null | undefined, i: React.Key | null | undefined) => (
                   <span
                     key={i}
                     className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full"
