@@ -15,8 +15,10 @@ const services = [
   { name: "Digital Marketing", href: "/services/digital-marketing" },
   { name: "UI/UX Design", href: "/services/ui-ux-design" },
   { name: "App Development", href: "/services/app-development" },
-  { name: "Branding", href: "/services/branding" },
-  { name: "E-commerce", href: "/services/e-commerce" },
+  { name: "Search Engine Optimization", href: "/services/seo" },
+  { name: "Influencer Marketing", href: "/services/influencer-marketing" },
+  { name: "Logo Design", href: "/services/logo-design" },
+  { name: "Events Management", href: "/services/events-management" },
 ]
 
 const Header = () => {

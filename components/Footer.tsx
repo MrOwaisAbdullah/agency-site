@@ -115,6 +115,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/services/influencer-marketing"
+                  className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
+                >
+                  Influencer Marketing
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services/ui-ux-design"
                   className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
                 >
@@ -129,6 +137,23 @@ export default function Footer() {
                   Search Engine Optimization
                 </Link>
               </li>
+              <li>
+              <Link
+                  href="/services/logo-design"
+                  className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
+                >
+                  Logo Design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/events-management"
+                  className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
+                >
+                  Events Management
+                </Link>
+              </li>
+
             </ul>
           </div>
 
