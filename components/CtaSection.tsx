@@ -15,7 +15,7 @@ export default function CtaSection({
   buttonLink,
 }: CtaSectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden bg-gradient-to-t from-transparent to-[#131519] rounded-t-[50px] border-t border-t-gray-600">
+    <section className="py-20 relative overflow-hidden bg-gradient-to-t from-background to-[#131519] rounded-t-[50px] border-t border-t-gray-600">
       {/* Grid Background Pattern */}
       <div
         className="absolute inset-0 w-full h-full"

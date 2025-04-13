@@ -1,55 +1,87 @@
 const projects = {
-  "Next.js": [
+  "Web Development":[
     {
-      title: "Personal Portfolio Website",
+      title: "OceanFrontDubai.com",
       description:
-        "My personal portfolio showcasing my skills, projects, and experience, built with Next.js.",
-      image: "/assets/placeholder.png",
-      link: "#",
-      tags: ["Next.js", "Tailwind", "Portfolio"],
+        "A sophisticated real estate platform offering exceptional properties and services in Dubai.",
+      image: "/assets/projects/oceanfrontdubai.jpg",
+      link: "https://oceanfrontdubai.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Real Estate"],
     },
     {
-      title: "FurnitureMart.pk",
+      title: "ShopSkinzXA.com",
       description:
-        "A fully dynamic furniture marketplace built using Next.js, Sanity, and Tailwind CSS.",
-      image: "/assets/placeholder.png",
-      link: "https://furniture-mart-pk.vercel.app/",
-      tags: ["Next.js", "Sanity", "E-commerce"],
+        "An online store specializing in skincare products with a focus on natural and effective solutions.",
+      image: "/assets/projects/shopskinzxa.jpg",
+      link: "https://shopskinzxa.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Skincare", "E-commerce"],
     },
     {
-      title: "Blog Website",
+      title: "SoneriCare.com",
       description:
-        "A fully functional blog with comments, categories, and dynamic content using Sanity.",
-      image: "/assets/placeholder.png",
-      link: "https://blog-site-green-one.vercel.app/",
-      tags: ["Next.js", "Sanity", "Blog"],
+        "A beauty and wellness website featuring premium skincare products inspired by nature.",
+      image: "/assets/projects/sonericare.jpg",
+      link: "https://sonericare.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Beauty", "E-commerce"],
     },
     {
-      title: "FurnitureMart.pk Admin Dashboard",
+      title: "TheBoredRoomX.com",
       description:
-        "A fully dynamic furniture marketplace dashboard built using Next.js, Sanity, and Tailwind CSS.",
-      image: "/assets/placeholder.png",
-      link: "https://admin.oneklickdigi.com/",
-      tags: ["Next.js", "Sanity", "Dashboard"],
+        "A dynamic platform providing team-building activities and engagement solutions in Dubai.",
+      image: "/assets/projects/theboredroomx.jpg",
+      link: "https://theboredroomx.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Services"],
     },
     {
-      title: "Personal AI Assistant",
+      title: "UEBrands.PK",
       description:
-        "An AI-powered chatbot integrated into my portfolio website, allowing visitors to explore my skills, projects, and contact details effortlessly.",
-      image: "/assets/placeholder.png",
-      link: "#",
-      tags: ["Next.js", "AI", "Chatbot", "Portfolio"],
+        "A fitness and nutrition brand website showcasing zero-sugar energy drinks and supplements.",
+      image: "/assets/projects/uebrands.jpg",
+      link: "https://uebrands.pk/",
+      tags: ["WordPress", "PHP", "MySQL", "Fitness", "E-commerce"],
     },
     {
-      title: "First Portfolio Website 😅",
+      title: "Jawa.pk",
       description:
-        "My First Practice portfolio showcasing my skills, projects, and experience, built with Next.js.",
-      image: "/assets/placeholder.png",
-      link: "https://portfolio-class-assignment.vercel.app/",
-      tags: ["Next.js", "Tailwind", "Portfolio"],
+        "A dynamic e-commerce platform showcasing a wide range of products, including the innovative Ball Trimmer.",
+      image: "/assets/projects/jawa.jpg",
+      link: "https://jawa.pk/",
+      tags: ["Shopify", "E-commerce", "Grooming"],
+    },
+    {
+      title: "KemeiStore.pk",
+      description:
+        "The official online store for Kemei, offering a variety of high-quality electronic products with a user-friendly interface.",
+      image: "/assets/projects/kemeistore.jpg",
+      link: "https://kemeistore.pk/",
+      tags: ["Shopify", "E-commerce", "Electronics"],
+    },
+    {
+      title: "MalabisVogue.com",
+      description:
+        "An elegant fashion website featuring custom apparel and bold designs, catering to modern fashion enthusiasts.",
+      image: "/assets/projects/malabisvogue.jpg",
+      link: "https://malabisvogue.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Fashion", "E-commerce"],
+    },
+    {
+      title: "MasterArgoFoods.com",
+      description:
+        "A comprehensive food products website highlighting fresh ingredients and traditional recipes, perfect for culinary enthusiasts.",
+      image: "/assets/projects/masterargofoods.jpg",
+      link: "https://masterargofoods.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Food", "Elementor"],
+    },
+    {
+      title: "MasterSweetne.com",
+      description:
+        "A professional corporate website for Master Sweetener, showcasing their expertise in sweeteners and related products.",
+      image: "/assets/projects/mastersweetne.jpg",
+      link: "https://mastersweetne.com/",
+      tags: ["WordPress", "PHP", "MySQL", "Elementor", "Sweeteners"],
     },
   ],
-  WordPress: [
+  "Social Media Marketing": [
     {
       title: "Landscape & Gardening Website",
       description:
@@ -97,16 +129,6 @@ const projects = {
       image: "/assets/placeholder.png",
       link: "#",
       tags: ["WordPress", "E-commerce", "Home Improvement"],
-    },
-  ],
-  "Tools & Automation": [
-    {
-      title: "SEO Audit Script",
-      description:
-        "Automated script to analyze website SEO and provide optimization recommendations.",
-      image: "/assets/placeholder.png",
-      link: "#",
-      tags: ["SEO", "Automation", "CLI Tool"],
     },
   ],
 };

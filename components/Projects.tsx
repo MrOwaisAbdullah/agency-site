@@ -12,7 +12,7 @@ type Project = {
   tags: string[];
 };
 
-type ServiceType = "Next.js" | "WordPress" | "Tools & Automation";
+type ServiceType = "Web Development" | "Social Media Marketing";
 
 const Projects = ({ service }: { service: ServiceType }) => {
   return (
@@ -57,6 +57,8 @@ const Projects = ({ service }: { service: ServiceType }) => {
               <div className="flex items-center">
                 <Link
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center text-[#3a69ff] transition-all hover:text-white"
                 >
                   <span className="font-poppins mr-2 font-medium">Learn more</span>

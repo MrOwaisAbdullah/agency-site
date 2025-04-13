@@ -118,9 +118,10 @@ export default function WebDevelopmentService() {
             exceptional results for our clients.
           </p>
 
-          <Projects service="WordPress" />
+          <Projects service="Web Development" />
         </FadeInSection>
         </section>
+        
       {/* Why Choose Us Section */}
       <WhyChooseUsSection
         mainTitle="Why Choose"
