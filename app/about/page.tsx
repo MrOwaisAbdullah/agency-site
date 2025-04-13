@@ -1,12 +1,20 @@
-import React from 'react'
-import About from '@/components/About'
+import React from "react";
+import About from "@/components/About";
+import CtaSection from "@/components/CtaSection";
 
 const about = () => {
   return (
     <>
-    <About />
+      <About />
+      {/* CTA Section */}
+      <CtaSection
+        title="Elevate Your Online Presence with Burraq Digits"
+        paragraph="Are you ready to captivate your audience with an exceptional online presence? Contact Burraq Digits today for a free consultation and discover how our services can help you!"
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
     </>
-  )
-}
+  );
+};
 
-export default about
+export default about;
