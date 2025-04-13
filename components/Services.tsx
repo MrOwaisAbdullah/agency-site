@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import ServiceCard from "@/components/ui/ServiceCard"
+import { useState } from "react";
+import ServiceCard from "@/components/ui/ServiceCard";
+import FadeInSection from "./FadeInSection";
 
 const allServices = [
   {
@@ -14,12 +15,13 @@ const allServices = [
   {
     image: "/assets/services/influencer-marketing.jpg",
     title: "Influencer Marketing",
-    description: "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
+    description:
+      "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
     link: "/services/influencer-marketing",
   },
   {
     image: "/assets/services/app-development.jpg",
-    title: "App Development", 
+    title: "App Development",
     description:
       "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
     link: "/services/app-development",
@@ -55,49 +57,60 @@ const allServices = [
   {
     image: "/assets/services/logo.jpg",
     title: "Logo Design",
-    description: "Compeling content that tells your brand story and connects with your audience across all platforms.",
+    description:
+      "Compeling content that tells your brand story and connects with your audience across all platforms.",
     link: "/services/logo-design",
   },
-
-]
+];
 
 const Services = () => {
-  const [visibleCount, setVisibleCount] = useState(6)
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => Math.min(prevCount + 3, allServices.length))
-  }
+    setVisibleCount((prevCount) => Math.min(prevCount + 3, allServices.length));
+  };
 
-  const visibleServices = allServices.slice(0, visibleCount)
-  const hasMoreServices = visibleCount < allServices.length
+  const visibleServices = allServices.slice(0, visibleCount);
+  const hasMoreServices = visibleCount < allServices.length;
 
   return (
-    <section className="py-20 px-0">
-      <div className="max-w-7xl mx-auto px-5">
-        <div className="mb-16 text-center">
-          <h3 className="text-base text-accent font-medium sm:text-lg">Features</h3>
-          <h2 className="text-5xl text-text font-semibold sm:text-6xl">Services</h2>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {visibleServices.map((service, index) => (
-            <ServiceCard key={index} image={service.image} description={service.description} link={service.link} />
-          ))}
-        </div>
-
-        {hasMoreServices && (
-          <div className="mt-12 flex justify-center">
-            <button
-              onClick={handleLoadMore}
-              className="flex items-center text-center justify-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-6 rounded transition-all duration-300 transform shadow-lg shadow-accent/20 text-md font-semibold"
-            >
-              Load More
-            </button>
+    <FadeInSection>
+      <section className="py-20 px-0">
+        <div className="max-w-7xl mx-auto px-5">
+          <div className="mb-16 text-center">
+            <h3 className="text-base text-accent font-medium sm:text-lg">
+              Features
+            </h3>
+            <h2 className="text-5xl text-text font-semibold sm:text-6xl">
+              Services
+            </h2>
           </div>
-        )}
-      </div>
-    </section>
-  )
-}
 
-export default Services
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {visibleServices.map((service, index) => (
+              <ServiceCard
+                key={index}
+                image={service.image}
+                description={service.description}
+                link={service.link}
+              />
+            ))}
+          </div>
+
+          {hasMoreServices && (
+            <div className="mt-12 flex justify-center">
+              <button
+                onClick={handleLoadMore}
+                className="flex items-center text-center justify-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-6 rounded transition-all duration-300 transform shadow-lg shadow-accent/20 text-md font-semibold"
+              >
+                Load More
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </FadeInSection>
+  );
+};
+
+export default Services;

@@ -8,17 +8,18 @@ interface FAQItem {
 
 interface FaqSectionProps {
   title: string;
+  headingHighlight: string;
   faqs: FAQItem[];
 }
 
-export default function FaqSection({ title, faqs }: FaqSectionProps) {
+export default function FaqSection({ title, headingHighlight, faqs }: FaqSectionProps) {
   return (
-    <section className="py-20 bg-[#1a1c20]">
-      <div className="container mx-auto px-4">
+    <section className="py-20">
+      <div className="max-w-7xl mx-auto px-4">
         <FadeInSection>
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 font-montserrat">
-              {title}
+              {title} <span className="text-accent">{headingHighlight}</span>
             </h2>
 
             <Accordion type="single" collapsible className="space-y-4">

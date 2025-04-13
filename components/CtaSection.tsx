@@ -15,7 +15,7 @@ export default function CtaSection({
   buttonLink,
 }: CtaSectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#131519]">
+    <section className="py-20 relative overflow-hidden bg-[#131519] rounded-t-[50px] border-t border-t-gray-600">
       {/* Grid Background Pattern */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -30,7 +30,7 @@ export default function CtaSection({
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[120px]"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-blue-900/15 blur-[120px]"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <FadeInSection>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-montserrat">

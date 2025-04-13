@@ -124,7 +124,7 @@ const Header = () => {
   }
 
   return (
-    <header className="max-w-7xl mx-auto sm:pt-6 relative z-50 bg-transparent bg-opacity-0">
+    <header className="max-w-7xl mx-auto py-0 -my-4 sm:my-0 sm:pt-6 relative z-50 bg-transparent bg-opacity-0">
 
       <div className="mx-auto flex justify-between pt-8 sm:pt-0 p-5 flex-col lg:flex-row z-50">
         <div className="flex justify-between items-center">	

@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import projects from "@/data/projects";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import FadeInSection from "./FadeInSection";
 
 const ProjectTabs = () => {
   const categories = Object.keys(projects);
@@ -15,6 +16,7 @@ const ProjectTabs = () => {
   console.log(selectedTab);
 
   return (
+    <FadeInSection>
     <section id="projects" className="max-w-7xl mx-auto mt-20 mb-10 px-5">
       <div className="text-center">
         <h3 className="text-base text-accent font-medium sm:text-lg">
@@ -108,6 +110,7 @@ const ProjectTabs = () => {
         ))}
       </Tabs>
     </section>
+  </FadeInSection>
   );
 };
 

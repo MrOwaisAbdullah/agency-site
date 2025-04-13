@@ -2,9 +2,11 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import contactimg from "../public/assets/contact.png";
+import FadeInSection from "./FadeInSection";
 
 const Contact = () => {
   return (
+    <FadeInSection>
     <section className="max-w-7xl mx-auto text-gray-400 body-font relative px-4 py-24">
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:w-1/2 w-full opacity-90 rounded-lg overflow-hidden px-5 py-10 bg-gradient-to-br to-[#1c1f22] from-[#16161f]">
@@ -118,6 +120,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </FadeInSection>
   );
 };
 

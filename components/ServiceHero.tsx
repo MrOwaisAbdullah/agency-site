@@ -23,7 +23,7 @@ export default function ServiceHeroSection({
   buttonLink,
 }: AnimatedCtaProps) {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 rounded-b-[50px] border-b border-b-gray-600">
+    <section className="relative overflow-hidden md:pt-24 pt-8 pb-20 rounded-b-[50px] border-b border-b-gray-600">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
@@ -165,7 +165,7 @@ export default function ServiceHeroSection({
         ></motion.div>
       </div>
 
-      <div className="container mx-auto px-4 z-10 relative">
+      <div className="px-4 z-10 relative">
         <FadeInSection>
           <div className="text-center mb-8">
             <span className="text-accent uppercase tracking-wider text-sm font-semibold font-montserrat">

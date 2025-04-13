@@ -14,6 +14,7 @@ import WhyChooseUsSection from "../WhyChooseUs";
 import FadeInSection from "../FadeInSection";
 import FaqSection from "../Faq";
 import ServiceHeroSection from "../ServiceHero";
+import Projects from "../Projects";
 
 export default function WebDevelopmentService() {
   return (
@@ -30,12 +31,12 @@ export default function WebDevelopmentService() {
       />
 
       {/* Main Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="max-w-7xl mx-auto py-20">
+        <div className="px-4">
           <FadeInSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
-              Transform Your Website with Burraq Digits&apos;s Web Design &
-              Development Services
+              Transform Your Website with Burraq Digits&apos;s <span className="text-accent">Web Design &
+              Development</span> Services
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
               In today&apos;s digital world, a professionally designed and
@@ -105,6 +106,21 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
+      {/* Our Projects Section */}
+      <section className="max-w-7xl mx-auto py-20 px-4">
+        <FadeInSection>
+          <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
+            Our Recent <span className="text-accent">Web Projects</span>
+          </h2>
+          <p className="text-gray-400 text-center mb-16 text-lg font-poppins">
+            Explore our portfolio of successful web design and development
+            projects that showcase our expertise and commitment to delivering
+            exceptional results for our clients.
+          </p>
+
+          <Projects service="Next.js" />
+        </FadeInSection>
+        </section>
       {/* Why Choose Us Section */}
       <WhyChooseUsSection
         mainTitle="Why Choose"
@@ -158,7 +174,8 @@ export default function WebDevelopmentService() {
 
       {/* FAQ Section */}
       <FaqSection
-        title="Web Design & Development FAQs: What You Need to Know"
+        title="Web Design & Development"
+        headingHighlight= "FAQs"
         faqs={[
           {
             question: "What is Web Design & Development?",
@@ -232,8 +249,8 @@ export default function WebDevelopmentService() {
 
       {/* CTA Section - Redesigned with original brand colors */}
       <CtaSection
-        title="Elevate Your Online Presence with Burraq Digits's Web Design & Development Services"
-        paragraph="Are you ready to captivate your audience with an exceptional online presence? Contact Burraq Digits today for a free consultation and discover how our web design and development services can help you create a stunning, user-friendly website that drives results and supports your overall marketing goals."
+        title="Elevate Your Online Presence with Burraq Digits"
+        paragraph="Are you ready to captivate your audience with an exceptional online presence? Contact Burraq Digits today for a free consultation and discover how our services can help you!"
         buttonText="GET STARTED WITH WEB DEVELOPMENT"
         buttonLink="/contact"
       />

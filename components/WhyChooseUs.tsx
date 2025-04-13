@@ -19,8 +19,8 @@ interface WhyChooseUsProps {
 
 export default function WhyChooseUsSection( { mainTitle, titleName, titleFor, benefits, featuresLeft, featuresRight, ctaCard } : WhyChooseUsProps) {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-[#1a1c20]">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left Column */}
           <div className="lg:w-1/2">
@@ -44,7 +44,7 @@ export default function WhyChooseUsSection( { mainTitle, titleName, titleFor, be
           {/* Right Column */}
           <div className="lg:w-1/2">
             <FadeInSection delay={0.3}>
-              <div className="bg-[#1a1c20] p-8 rounded-lg border border-gray-800">
+              <div className="bg-background p-8 rounded-lg border border-gray-800">
                 <h3 className="text-2xl font-bold mb-6 font-montserrat">Features</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
                   <div>
