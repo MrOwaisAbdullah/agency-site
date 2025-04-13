@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Image from "next/image"
-import { useState, useRef, useEffect } from "react"
-import Logo from "../public/assets/logo.png"
-import Link from "next/link"
-import { FaArrowRight } from "react-icons/fa"
-import { CgClose, CgMenuRight } from "react-icons/cg"
-import { ChevronDown, ChevronRight } from "lucide-react"
+import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
+import Logo from "../public/assets/logo.png";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { CgClose, CgMenuRight } from "react-icons/cg";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 const services = [
   { name: "Web Development", href: "/services/web-development" },
@@ -19,87 +19,87 @@ const services = [
   { name: "Influencer Marketing", href: "/services/influencer-marketing" },
   { name: "Logo Design", href: "/services/logo-design" },
   { name: "Events Management", href: "/services/events-management" },
-]
+];
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const isMobileOrTablet = useRef(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isMobileOrTablet = useRef(false);
 
   // Check if we're on mobile/tablet (client-side only)
   useEffect(() => {
     const checkDevice = () => {
-      isMobileOrTablet.current = window.innerWidth < 1024
-    }
+      isMobileOrTablet.current = window.innerWidth < 1024;
+    };
 
-    checkDevice()
-    window.addEventListener("resize", checkDevice)
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
 
     return () => {
-      window.removeEventListener("resize", checkDevice)
-    }
-  }, [])
+      window.removeEventListener("resize", checkDevice);
+    };
+  }, []);
 
   // Handle dropdown hover behavior with delay (desktop only)
   const handleMouseEnter = () => {
-    if (isMobileOrTablet.current) return
+    if (isMobileOrTablet.current) return;
 
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
+      clearTimeout(timeoutRef.current);
     }
-    setServicesOpen(true)
-  }
+    setServicesOpen(true);
+  };
 
   const handleMouseLeave = () => {
-    if (isMobileOrTablet.current) return
+    if (isMobileOrTablet.current) return;
 
-    // Add a delay before closing the dropdown
     timeoutRef.current = setTimeout(() => {
-      setServicesOpen(false)
-    }, 300) // 300ms delay gives enough time to move to the dropdown
-  }
+      setServicesOpen(false);
+    }, 200);
+  };
 
-  // Toggle services dropdown on mobile/tablet
   const toggleServicesDropdown = (e: React.MouseEvent) => {
-    e.stopPropagation() // Prevent event from bubbling up
+    e.stopPropagation(); // Prevent event from bubbling up
     if (isMobileOrTablet.current) {
-      setServicesOpen(!servicesOpen)
+      setServicesOpen(!servicesOpen);
     }
-  }
+  };
 
   // Clean up timeout on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+        clearTimeout(timeoutRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setServicesOpen(false)
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setServicesOpen(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   function handleLinkClick() {
-    setIsMenuOpen(false)
-    setServicesOpen(false)
+    setIsMenuOpen(false);
+    setServicesOpen(false);
   }
 
   function getMenuClassNames() {
-    let menuClasses = []
+    let menuClasses = [];
 
     if (isMenuOpen) {
       menuClasses = [
@@ -118,46 +118,74 @@ const Header = () => {
         "bg-background/90",
         "z-50",
         "backdrop-blur-sm",
-      ]
+      ];
     } else {
-      menuClasses = ["hidden", "lg:flex", "lg:ml-auto", "flex-wrap", "items-center", "justify-center"] // Changed from md: to lg:
+      menuClasses = [
+        "hidden",
+        "lg:flex",
+        "lg:ml-auto",
+        "flex-wrap",
+        "items-center",
+        "justify-center",
+      ];
     }
-    return menuClasses.join(" ")
+    return menuClasses.join(" ");
   }
 
   return (
     <header className="max-w-7xl mx-auto py-0 -my-4 sm:my-0 sm:pt-6 relative z-50 bg-transparent bg-opacity-0 font-poppins">
-
       <div className="mx-auto flex justify-between pt-8 sm:pt-0 p-5 flex-col lg:flex-row z-50">
-        <div className="flex justify-between items-center">	
-        <Link href={"/"} className="mb-4 lg:mb-0">
-          <Image src={Logo || "/placeholder.svg"} width={160} height={80} alt={"Burraq Digits"} />
-        </Link>
+        <div className="flex justify-between items-center">
+          <Link href={"/"} className="mb-4 lg:mb-0">
+            <Image
+              src={Logo || "/placeholder.svg"}
+              width={160}
+              height={80}
+              alt={"Burraq Digits"}
+            />
+          </Link>
 
-        <button
-          className="lg:hidden inline-flex items-center -mt-4 text-4xl text-gray-600 hover:text-accent z-10"
-          onClick={(e) => {
-            e.stopPropagation() // Prevent event from bubbling up
-            setIsMenuOpen(!isMenuOpen)
-          }}
-          aria-label="Toggle mobile menu"
-        >
-          {isMenuOpen ? <CgClose /> : <CgMenuRight />}
-        </button>
+          <button
+            className="lg:hidden inline-flex items-center -mt-4 text-4xl text-gray-600 hover:text-accent z-10"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent event from bubbling up
+              setIsMenuOpen(!isMenuOpen);
+            }}
+            aria-label="Toggle mobile menu"
+          >
+            {isMenuOpen ? <CgClose /> : <CgMenuRight />}
+          </button>
         </div>
         <nav className={getMenuClassNames()}>
-          <Link href={"/"} onClick={handleLinkClick} className="mr-5 text-white text-base hover:text-accent">
+          <Link
+            href={"/"}
+            onClick={handleLinkClick}
+            className="mr-5 text-white text-base hover:text-accent"
+          >
             Home
           </Link>
-          <Link href={"/about"} onClick={handleLinkClick} className="mr-5 text-white text-base hover:text-accent">
+          <Link
+            href={"/about"}
+            onClick={handleLinkClick}
+            className="mr-5 text-white text-base hover:text-accent"
+          >
             About Us
           </Link>
 
           {/* Services with dropdown */}
-          <div className="relative" ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div
+            className="relative"
+            ref={dropdownRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             {/* Desktop: Use div with hover, Mobile/Tablet: Use button with click */}
             <div className="mr-5 text-white text-base hover:text-accent cursor-pointer flex items-center">
-              <Link href="/services" className="hover:text-accent" onClick={handleLinkClick}>
+              <Link
+                href="/services"
+                className="hover:text-accent"
+                onClick={handleLinkClick}
+              >
                 Our Services
               </Link>
               <button
@@ -165,7 +193,11 @@ const Header = () => {
                 className="ml-1 flex items-center focus:outline-none"
                 aria-label="Toggle services menu"
               >
-                <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
             </div>
 
@@ -195,7 +227,11 @@ const Header = () => {
             )}
           </div>
 
-          <Link href={"/projects"} onClick={handleLinkClick} className="mr-5 text-white text-base hover:text-accent">
+          <Link
+            href={"/projects"}
+            onClick={handleLinkClick}
+            className="mr-5 text-white text-base hover:text-accent"
+          >
             Our Projects
           </Link>
 
@@ -208,7 +244,7 @@ const Header = () => {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
