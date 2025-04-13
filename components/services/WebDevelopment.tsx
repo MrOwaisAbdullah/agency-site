@@ -1,30 +1,19 @@
-"use client";
 import type React from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import {
-  CheckCircle,
-  ArrowRight,
   Code,
-  Layout,
   Smartphone,
   ShoppingCart,
   Shield,
   Settings,
+  Layout,
+  CheckCircle,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import FadeInSection from "@/components/FadeInSection";
 import CtaSection from "../CtaSection";
 import ServiceCard from "../ui/ServiceCard2";
-import FeatureItem from "../ui/FeaturedItem";
-import ServiceHeroSection from "../ServiceHero";
-import FaqSection from "../Faq";
 import WhyChooseUsSection from "../WhyChooseUs";
+import FadeInSection from "../FadeInSection";
+import FaqSection from "../Faq";
+import ServiceHeroSection from "../ServiceHero";
 
 export default function WebDevelopmentService() {
   return (
@@ -35,7 +24,7 @@ export default function WebDevelopmentService() {
         heading="Web Design & Development by"
         headingHighlight="Burraq Digits"
         heading2="Elevate Your Online Presence"
-        paragraph="Create a professional online presence with Burraq Digits's expert web design and development services, tailored to deliver a seamless user experience and drive results."
+        paragraph="Create a professional online presence with Burraq Digitss expert web design and development services, tailored to deliver a seamless user experience and drive results."
         buttonText="GET STARTED WITH WEB DEVELOPMENT"
         buttonLink="/contact"
       />
@@ -45,13 +34,13 @@ export default function WebDevelopmentService() {
         <div className="container mx-auto px-4">
           <FadeInSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
-              Transform Your Website with Burraq Digits's Web Design &
+              Transform Your Website with Burraq Digits&apos;s Web Design &
               Development Services
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              In today's digital world, a professionally designed and developed
-              website is essential for any successful business. At Burraq
-              Digits, our team of expert web designers and developers is
+              In today&apos;s digital world, a professionally designed and
+              developed website is essential for any successful business. At
+              Burraq Digits, our team of expert web designers and developers is
               dedicated to crafting stunning, user-friendly websites that
               reflect your brand, captivate your audience and achieve your
               business goals.
@@ -130,24 +119,38 @@ export default function WebDevelopmentService() {
           {
             icon: <CheckCircle size={20} />,
             title: "A team of dedicated and experienced designers",
-            description: "Passionate about creating beautiful and functional websites",
+            description:
+              "Passionate about creating beautiful and functional websites",
           },
           {
             icon: <CheckCircle size={20} />,
             title: "A focus on user experience and performance",
-            description: "Ensuring your website is fast, responsive, and user-friendly",
+            description:
+              "Ensuring your website is fast, responsive, and user-friendly",
           },
           {
             icon: <CheckCircle size={20} />,
             title: "Cutting-edge tools and technologies",
-            description: "To stay ahead of industry trends and deliver exceptional results",
+            description:
+              "To stay ahead of industry trends and deliver exceptional results",
           },
         ]}
-        featuresRight={["Responsive Design", "SEO-Optimized Websites", "User Experience (UX)", "E-commerce Solutions"]}
-        featuresLeft={["Website Security", "Analytics Setup", "Technical Support and Maintenance", "Performance Optimization"]}
+        featuresRight={[
+          "Responsive Design",
+          "SEO-Optimized Websites",
+          "User Experience (UX)",
+          "E-commerce Solutions",
+        ]}
+        featuresLeft={[
+          "Website Security",
+          "Analytics Setup",
+          "Technical Support and Maintenance",
+          "Performance Optimization",
+        ]}
         ctaCard={{
           title: "Ready to transform your online presence?",
-          description: "Contact us today to discuss your web design and development needs and discover how we can help you achieve your goals.",
+          description:
+            "Contact us today to discuss your web design and development needs and discover how we can help you achieve your goals.",
           buttonText: "Schedule a Consultation",
           buttonLink: "/contact",
         }}
@@ -165,8 +168,8 @@ export default function WebDevelopmentService() {
                 of websites. Web design focuses on the aesthetic and user
                 experience aspects, ensuring the site is visually appealing and
                 easy to navigate. Web development involves the coding and
-                programming that powers the website's functionality. Together,
-                they create a complete online presence for businesses.
+                programming that powers the website&apos;s functionality.
+                Together, they create a complete online presence for businesses.
               </>
             ),
           },
@@ -195,8 +198,8 @@ export default function WebDevelopmentService() {
                 The timeline varies depending on the complexity of the project.
                 A simple website might take 4-6 weeks, while a more complex
                 e-commerce site or custom web application could take 8-12 weeks
-                or more. We'll provide you with a detailed timeline during our
-                initial consultation.
+                or more. We&apos;ll provide you with a detailed timeline during
+                our initial consultation.
               </>
             ),
           },
@@ -204,10 +207,10 @@ export default function WebDevelopmentService() {
             question: "Can you redesign my existing website?",
             answer: (
               <>
-                Yes, we specialize in website redesigns. We'll evaluate your
-                current website, identify areas for improvement, and create a
-                modern, effective design that better serves your business goals
-                while preserving the aspects that are working well.
+                Yes, we specialize in website redesigns. We&apos;ll evaluate
+                your current website, identify areas for improvement, and create
+                a modern, effective design that better serves your business
+                goals while preserving the aspects that are working well.
               </>
             ),
           },
