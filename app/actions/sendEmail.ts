@@ -32,6 +32,7 @@ export async function sendContactFormEmail(formData: FormData) {
       message: formData.get("message"),
     });
   } catch (error) {
+    console.log(error)
     return { success: false, error: "Invalid form data" };
   }
 
@@ -73,6 +74,7 @@ export async function sendContactFormEmail(formData: FormData) {
   } catch (error) {
     const errorMessage =
       error instanceof Error ? error.message : "Failed to send email";
+      console.log(error)
     return { success: false, error: errorMessage };
   }
 }

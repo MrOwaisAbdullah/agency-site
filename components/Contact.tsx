@@ -108,7 +108,7 @@ const Contact = () => {
 
           <div className="md:w-1/2 w-full bg-background flex flex-col md:ml-auto mt-8 md:mt-0 font-montserrat">
             <h2 className="font-semibold text-text text-2xl sm:text-3xl">
-              LET'S TALK
+              LET&apos;S TALK
             </h2>
             <p className="mt-1 mb-6 text-sm">
               We are here to help you. Let us know how we can assist you.
