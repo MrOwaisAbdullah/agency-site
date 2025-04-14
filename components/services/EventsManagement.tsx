@@ -37,7 +37,7 @@ export default function EventsManagementService() {
               End-to-End <span className="text-accent">Event Management</span> That Actually Delivers
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              Whether it's a product launch, brand activation, corporate meetup, or public expo — we handle every piece of the puzzle. You show up, we make it look effortless.
+              Whether it&apos;s a product launch, brand activation, corporate meetup, or public expo — we handle every piece of the puzzle. You show up, we make it look effortless.
             </p>
           </FadeInSection>
 
@@ -106,7 +106,7 @@ export default function EventsManagementService() {
             Past <span className="text-accent">Event Highlights</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 text-lg font-poppins">
-            From mall activations to exhibitions, here's how we've pulled off events that delivered — in reach, impact, and vibe.
+            From mall activations to exhibitions, here&apos;s how we've pulled off events that delivered - in reach, impact, and vibe.
           </p>
 
           {/* <Projects service="Event Management" /> */}
@@ -178,7 +178,7 @@ export default function EventsManagementService() {
             question: "Do you also handle the event promotion?",
             answer: (
               <>
-                Yes — we can help with pre-event hype on social media, content strategy, influencer outreach, and coverage during the event itself.
+                Yes - we can help with pre-event hype on social media, content strategy, influencer outreach, and coverage during the event itself.
               </>
             ),
           },

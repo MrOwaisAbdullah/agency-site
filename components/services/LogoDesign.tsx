@@ -38,7 +38,7 @@ export default function LogoDesignService() {
               Stand Out From the Start with <span className="text-accent">Logo Designs</span> That Speak Volumes
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              A great logo makes people remember you. At Burraq Digits, we design visual identities that are clean, scalable, and instantly recognizable. Whether you're starting fresh or refreshing your look — we&apos;ll make sure you&apos;re making the right first impression.
+              A great logo makes people remember you. At Burraq Digits, we design visual identities that are clean, scalable, and instantly recognizable. Whether you're starting fresh or refreshing your look - we&apos;ll make sure you&apos;re making the right first impression.
             </p>
           </FadeInSection>
 
@@ -156,7 +156,7 @@ export default function LogoDesignService() {
         ctaCard={{
           title: "Ready to Build a Brand That Stands Out?",
           description:
-            "Let’s create a logo that speaks for your brand — even before you do. Book a free logo consultation today.",
+            "Lets create a logo that speaks for your brand — even before you do. Book a free logo consultation today.",
           buttonText: "Start Your Logo Project",
           buttonLink: "/contact",
         }}

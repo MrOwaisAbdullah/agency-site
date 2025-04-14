@@ -25,7 +25,7 @@ export default function AppDevelopmentService() {
         heading="Launch Smarter Apps with"
         headingHighlight="Burraq Digits"
         heading2="From Idea to App Store — We&apos;ve Got You"
-        paragraph="We design and develop mobile apps that are built for performance, clarity, and real-world use. Whether it&apos;s iOS, Android, or cross-platform — we deliver apps that actually get used."
+        paragraph="We design and develop mobile apps that are built for performance, clarity, and real-world use. Whether it&apos;s iOS, Android, or cross-platform - we deliver apps that actually get used."
         buttonText="START YOUR APP PROJECT"
         buttonLink="/contact"
       />
@@ -38,7 +38,7 @@ export default function AppDevelopmentService() {
               Build Apps That <span className="text-accent">Perform</span> — Not Just Exist
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              Whether you're launching a startup, scaling your business, or adding features to your platform — our app development team builds clean, user-friendly, and scalable mobile apps that are ready for real use and real users.
+              Whether you&apos;re launching a startup, scaling your business, or adding features to your platform — our app development team builds clean, user-friendly, and scalable mobile apps that are ready for real use and real users.
             </p>
           </FadeInSection>
 
@@ -171,7 +171,7 @@ export default function AppDevelopmentService() {
             question: "Do you build apps for both iOS and Android?",
             answer: (
               <>
-                Yes — we build for both platforms using either native development or cross-platform frameworks, depending on your needs.
+                Yes - we build for both platforms using either native development or cross-platform frameworks, depending on your needs.
               </>
             ),
           },
