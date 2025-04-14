@@ -38,7 +38,7 @@ export default function WebDevelopmentService() {
               Websites That <span className="text-accent">Deliver Results</span> — Built by Burraq Digits
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              We don&apos;t just code websites — we create experiences. Whether you&apos;re launching a new brand, revamping your current site, or adding e-commerce to the mix, we’ve got the tools and team to make it click.
+              We don&apos;t just code websites — we create experiences. Whether you&apos;re launching a new brand, revamping your current site, or adding e-commerce to the mix, we&apos;ve got the tools and team to make it click.
             </p>
           </FadeInSection>
 
