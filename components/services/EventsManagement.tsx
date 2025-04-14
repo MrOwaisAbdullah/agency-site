@@ -106,7 +106,7 @@ export default function EventsManagementService() {
             Past <span className="text-accent">Event Highlights</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 text-lg font-poppins">
-            From mall activations to exhibitions, here&apos;s how we've pulled off events that delivered - in reach, impact, and vibe.
+            From mall activations to exhibitions, here&apos;s how we&apos;ve pulled off events that delivered - in reach, impact, and vibe.
           </p>
 
           {/* <Projects service="Event Management" /> */}
