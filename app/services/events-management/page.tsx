@@ -1,19 +1,26 @@
-import EventsManagementService from '@/components/services/EventsManagement'
-import React from 'react'
+import EventsManagementService from "@/components/services/EventsManagement";
+import React from "react";
+import { Metadata } from "next";
 
-export const metadata = {
-    title: "Events Management Service | Burraq Digits",
+export const metadata: Metadata = {
+  title: "Events Management Services | Burraq Digits",
+  description:
+    "Professional event management services for digital and physical events. We handle planning, execution, and promotion to ensure successful events.",
+  openGraph: {
+    title: "Events Management Services | Burraq Digits",
     description:
-        "Burraq Digits is a leading events management agency that specializes in planning and executing memorable events for businesses and individuals. Our team of experienced event planners works closely with clients to understand their vision and create customized event solutions that exceed expectations.",
-    keywords: "Events Management, Event Planning, Corporate Events, Burraq Digits",
-}
+      "Professional event management services for digital and physical events. We handle planning, execution, and promotion to ensure successful events.",
+    url: "https://burraqdigits.com/services/events-management",
+  },
+  alternates: {
+    canonical: "/services/events-management",
+  },
+};
 
 export const dynamic = "force-static";
 
 const eventsManagement = () => {
-  return (
-    <EventsManagementService />
-  )
-}
+  return <EventsManagementService />;
+};
 
-export default eventsManagement
+export default eventsManagement;

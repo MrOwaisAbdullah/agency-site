@@ -92,7 +92,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "Burraq Digits",
   url: "https://burraqdigits.com",
-  logo: "https://burraqdigits.com/logo.png",
+  logo: "https://burraqdigits.com/asstes/logo.png",
   description:
     "Not just another digital agency. We are your partners in digital transformation.",
   address: {

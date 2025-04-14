@@ -1,10 +1,24 @@
-import CtaSection from "@/components/CtaSection";
-import Services from "@/components/Services";
 import React from "react";
+import Services from "@/components/Services";
+import { Metadata } from "next";
+import CtaSection from "@/components/CtaSection";
 
-export const dynamic = "force-static";
+export const metadata: Metadata = {
+  title: "Our Services | Burraq Digits",
+  description:
+    "Explore our comprehensive digital services including web development, digital marketing, UI/UX design, app development, SEO, and more.",
+  openGraph: {
+    title: "Our Services | Burraq Digits",
+    description:
+      "Explore our comprehensive digital services including web development, digital marketing, UI/UX design, app development, SEO, and more.",
+    url: "https://burraqdigits.com/services",
+  },
+  alternates: {
+    canonical: "/services",
+  },
+};
 
-const projects = () => {
+const services = () => {
   return (
     <>
       <Services />
@@ -20,4 +34,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default services;

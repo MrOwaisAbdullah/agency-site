@@ -1,11 +1,20 @@
 import AppDevelopmentService from "@/components/services/AppDevelopment";
 import React from "react";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "App Development Service | Burraq Digits",
+export const metadata: Metadata = {
+  title: "App Development Services | Burraq Digits",
   description:
-    "Burraq Digits is a leading app development agency that specializes in creating innovative and user-friendly mobile applications for businesses of all sizes. Our team of experienced developers works closely with clients to understand their unique requirements and deliver custom app solutions that drive engagement and growth.",
-  keywords: "App Development, Mobile Apps, Custom Software, Burraq Digits",
+    "Custom mobile and web application development services. We build scalable, secure, and user-friendly applications for your business needs.",
+  openGraph: {
+    title: "App Development Services | Burraq Digits",
+    description:
+      "Custom mobile and web application development services. We build scalable, secure, and user-friendly applications for your business needs.",
+    url: "https://burraqdigits.com/services/app-development",
+  },
+  alternates: {
+    canonical: "/services/app-development",
+  },
 };
 
 export const dynamic = "force-static";

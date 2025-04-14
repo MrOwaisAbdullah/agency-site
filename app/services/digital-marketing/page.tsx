@@ -1,10 +1,20 @@
 import DigitalMarketingService from "@/components/services/DigitalMarketing";
 import React from "react";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Digital Marketing Service| Burraq Digits",
+export const metadata: Metadata = {
+  title: "Digital Marketing Services | Burraq Digits",
   description:
-    "Professional digital marketing services to boost your online presence, drive traffic, and increase conversions for your business.",
+    "Comprehensive digital marketing solutions to grow your online presence. SEO, social media, content marketing, and more.",
+  openGraph: {
+    title: "Digital Marketing Services | Burraq Digits",
+    description:
+      "Comprehensive digital marketing solutions to grow your online presence. SEO, social media, content marketing, and more.",
+    url: "https://burraqdigits.com/services/digital-marketing",
+  },
+  alternates: {
+    canonical: "/services/digital-marketing",
+  },
 };
 
 export const dynamic = "force-static";

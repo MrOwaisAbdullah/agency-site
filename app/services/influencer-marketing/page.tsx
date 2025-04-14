@@ -1,19 +1,28 @@
-import InfluencerMarketingService from '@/components/services/InfluencerMarketing'
-import React from 'react'
+import React from "react";
+import InfluencerMarketingService from "@/components/services/InfluencerMarketing";
+import { Metadata } from "next";
 
-export const metadata = {
-    title: "Influencer Marketing Service | Burraq Digits",
+export const metadata: Metadata = {
+  title: "Influencer Marketing Services | Burraq Digits",
+  description:
+    "Strategic influencer marketing services to connect your brand with the right audience through authentic partnerships and campaigns.",
+  keywords:
+    "Influencer Marketing, Social Media, Brand Promotion, Burraq Digits",
+  openGraph: {
+    title: "Influencer Marketing Services | Burraq Digits",
     description:
-        "Burraq Digits is a leading influencer marketing agency that specializes in connecting brands with the right influencers to amplify their reach and engagement. Our team of experts curates impactful influencer campaigns that drive brand awareness and foster authentic connections with target audiences.",
-    keywords: "Influencer Marketing, Social Media, Brand Promotion, Burraq Digits",
-}
+      "Strategic influencer marketing services to connect your brand with the right audience through authentic partnerships and campaigns.",
+    url: "https://burraqdigits.com/services/influencer-marketing",
+  },
+  alternates: {
+    canonical: "/services/influencer-marketing",
+  },
+};
 
 export const dynamic = "force-static";
 
 const influencerMarketing = () => {
-  return (
-    <InfluencerMarketingService />
-)
-}
+  return <InfluencerMarketingService />;
+};
 
-export default influencerMarketing
+export default influencerMarketing;
