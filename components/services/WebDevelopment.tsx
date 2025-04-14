@@ -22,10 +22,10 @@ export default function WebDevelopmentService() {
       {/* Hero Section */}
       <ServiceHeroSection
         subheading="WEBSITE DESIGN & DEVELOPMENT"
-        heading="Web Design & Development by"
+        heading="Web Development by"
         headingHighlight="Burraq Digits"
-        heading2="Elevate Your Online Presence"
-        paragraph="Create a professional online presence with Burraq Digitss expert web design and development services, tailored to deliver a seamless user experience and drive results."
+        heading2="Build Fast. Look Sharp. Convert Better."
+        paragraph="Your website isn&apos;t just a page — it&apos;s your brand&apos;s first impression. We build sleek, responsive, and performance-driven sites that do more than look good — they work."
         buttonText="GET STARTED WITH WEB DEVELOPMENT"
         buttonLink="/contact"
       />
@@ -35,22 +35,16 @@ export default function WebDevelopmentService() {
         <div className="px-4">
           <FadeInSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
-              Transform Your Website with Burraq Digits&apos;s <span className="text-accent">Web Design &
-              Development</span> Services
+              Websites That <span className="text-accent">Deliver Results</span> — Built by Burraq Digits
             </h2>
             <p className="text-gray-400 mb-16 max-w-3xl text-lg font-poppins">
-              In today&apos;s digital world, a professionally designed and
-              developed website is essential for any successful business. At
-              Burraq Digits, our team of expert web designers and developers is
-              dedicated to crafting stunning, user-friendly websites that
-              reflect your brand, captivate your audience and achieve your
-              business goals.
+              We don&apos;t just code websites — we create experiences. Whether you&apos;re launching a new brand, revamping your current site, or adding e-commerce to the mix, we’ve got the tools and team to make it click.
             </p>
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
             <h3 className="text-2xl font-bold mb-10 font-montserrat">
-              Our Comprehensive Web Design & Development Services Include:
+              What We Offer:
             </h3>
           </FadeInSection>
 
@@ -59,189 +53,157 @@ export default function WebDevelopmentService() {
               <ServiceCard
                 icon={Layout}
                 title="Custom Web Design"
-                description="We create responsive, mobile-friendly website designs that reflect your brand identity and engage your audience."
+                description="Modern, responsive, and built to match your brand — pixel-perfect across all devices."
               />
             </FadeInSection>
 
             <FadeInSection delay={0.4}>
               <ServiceCard
                 icon={Smartphone}
-                title="User Experience (UX) Design"
-                description="Our UX experts craft intuitive, user-centered designs that ensure a seamless browsing experience across all platforms."
+                title="User Experience (UX)"
+                description="Navigation that flows, content that connects — all designed with your audience in mind."
               />
             </FadeInSection>
 
             <FadeInSection delay={0.5}>
               <ServiceCard
                 icon={Code}
-                title="Web Development"
-                description="Our skilled developers use the latest technologies to build fast, secure, and scalable websites that perform flawlessly."
+                title="Front & Back-End Development"
+                description="Built with clean, scalable code using the latest tech — for performance that lasts."
               />
             </FadeInSection>
 
             <FadeInSection delay={0.6}>
               <ServiceCard
                 icon={ShoppingCart}
-                title="E-commerce Solutions"
-                description="We design and develop e-commerce websites that provide a smooth shopping experience, helping you increase sales and grow your online business."
+                title="E-commerce Websites"
+                description="From product pages to checkout — we build online stores that convert visitors into buyers."
               />
             </FadeInSection>
 
             <FadeInSection delay={0.7}>
               <ServiceCard
                 icon={Settings}
-                title="Content Management Systems (CMS) Integration"
-                description="We integrate popular content management systems, such as WordPress and Shopify, making it easy for you to manage and update your website content."
+                title="CMS Integration"
+                description="Easily manage your site with WordPress, Shopify, or custom dashboards tailored to your workflow."
               />
             </FadeInSection>
 
             <FadeInSection delay={0.8}>
               <ServiceCard
                 icon={Shield}
-                title="Website Maintenance and Support"
-                description="We provide ongoing website maintenance and support to ensure your website remains up-to-date, secure, and optimized for performance."
+                title="Security & Maintenance"
+                description="We keep your site running smoothly with regular updates, monitoring, and support."
               />
             </FadeInSection>
           </div>
         </div>
       </section>
 
-      {/* Our Projects Section */}
+      {/* Projects Section */}
       <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Our Recent <span className="text-accent">Web Projects</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 text-lg font-poppins">
-            Explore our portfolio of successful web design and development
-            projects that showcase our expertise and commitment to delivering
-            exceptional results for our clients.
+            Scroll through some of the websites we&apos;ve designed and developed — fast, clean, and built to scale.
           </p>
 
           <Projects service="Web Development" />
         </FadeInSection>
-        </section>
-        
+      </section>
+
       {/* Why Choose Us Section */}
       <WhyChooseUsSection
-        mainTitle="Why Choose"
+        mainTitle="Why Partner With"
         titleName="Burraq Digits"
-        titleFor="Web Design & Development"
+        titleFor="Web Development"
         benefits={[
           {
             icon: <CheckCircle size={20} />,
-            title: "Customized web design and development solutions",
-            description: "Tailored to your unique business needs and goals",
+            title: "Built for Performance",
+            description: "Our websites are optimized for speed, UX, and clean code that lasts.",
           },
           {
             icon: <CheckCircle size={20} />,
-            title: "A team of dedicated and experienced designers",
-            description:
-              "Passionate about creating beautiful and functional websites",
+            title: "Custom to the Core",
+            description: "No templates, no shortcuts — just custom builds for your business goals.",
           },
           {
             icon: <CheckCircle size={20} />,
-            title: "A focus on user experience and performance",
-            description:
-              "Ensuring your website is fast, responsive, and user-friendly",
+            title: "SEO & Mobile Ready",
+            description: "Search engines and screen sizes love our work — and so will your users.",
           },
           {
             icon: <CheckCircle size={20} />,
-            title: "Cutting-edge tools and technologies",
-            description:
-              "To stay ahead of industry trends and deliver exceptional results",
+            title: "Reliable Support",
+            description: "Post-launch help, updates, and growth — we don’t vanish after delivery.",
           },
         ]}
         featuresRight={[
-          "Responsive Design",
-          "SEO-Optimized Websites",
-          "User Experience (UX)",
-          "E-commerce Solutions",
+          "Responsive Layouts",
+          "Custom UI",
+          "CMS Integration",
+          "Speed Optimization",
         ]}
         featuresLeft={[
-          "Website Security",
+          "Mobile-First Design",
+          "Security Features",
           "Analytics Setup",
-          "Technical Support and Maintenance",
-          "Performance Optimization",
+          "Ongoing Maintenance",
         ]}
         ctaCard={{
-          title: "Ready to transform your online presence?",
+          title: "Let’s Build Something That Works",
           description:
-            "Contact us today to discuss your web design and development needs and discover how we can help you achieve your goals.",
-          buttonText: "Schedule a Consultation",
+            "Whether you need a landing page or a full platform — we’ll help you launch it right. Get in touch to start your web project.",
+          buttonText: "BOOK A WEB CONSULTATION",
           buttonLink: "/contact",
         }}
       />
 
       {/* FAQ Section */}
       <FaqSection
-        title="Web Design & Development"
-        headingHighlight= "FAQs"
+        title="Web Development"
+        headingHighlight="FAQs"
         faqs={[
           {
-            question: "What is Web Design & Development?",
+            question: "Do you build custom websites or use templates?",
             answer: (
               <>
-                Web design and development involves the creation and maintenance
-                of websites. Web design focuses on the aesthetic and user
-                experience aspects, ensuring the site is visually appealing and
-                easy to navigate. Web development involves the coding and
-                programming that powers the website&apos;s functionality.
-                Together, they create a complete online presence for businesses.
+                We build fully custom websites tailored to your brand and goals. No generic templates — everything is designed from scratch.
               </>
             ),
           },
           {
-            question:
-              "What's the process for designing and developing a new website?",
+            question: "Will my website work on mobile devices?",
             answer: (
               <>
-                Our process typically includes: <br />
-                <br />
-                1) Discovery and planning, where we understand your goals and
-                requirements, <br />
-                2) Design phase, where we create wireframes and visual designs,{" "}
-                <br />
-                3) Development phase, where we build the actual website, <br />
-                4) Testing and quality assurance, <br />
-                5) Launch and deployment, and <br />
-                6) Ongoing maintenance and support.
+                Yes. All of our websites are responsive and mobile-friendly by default. We test across devices and browsers to ensure consistency.
               </>
             ),
           },
           {
-            question: "How long does it take to build a website?",
+            question: "How long does a website project take?",
             answer: (
               <>
-                The timeline varies depending on the complexity of the project.
-                A simple website might take 4-6 weeks, while a more complex
-                e-commerce site or custom web application could take 8-12 weeks
-                or more. We&apos;ll provide you with a detailed timeline during
-                our initial consultation.
+                It depends on the scope. A standard business site can take 4-6 weeks, while larger builds (e.g. e-commerce) can take 8-12 weeks. We&apos;ll give you a timeline before starting.
               </>
             ),
           },
           {
-            question: "Can you redesign my existing website?",
+            question: "Can you handle content, hosting, or domain setup too?",
             answer: (
               <>
-                Yes, we specialize in website redesigns. We&apos;ll evaluate
-                your current website, identify areas for improvement, and create
-                a modern, effective design that better serves your business
-                goals while preserving the aspects that are working well.
+                Absolutely. We offer full-service packages that include content creation, hosting setup, domain connection, and even SEO basics.
               </>
             ),
           },
           {
-            question:
-              "Do you offer ongoing support and maintenance after the website goes live?",
+            question: "What happens after the site goes live?",
             answer: (
               <>
-                We offer various maintenance packages to keep your website
-                secure, up-to-date, and performing optimally. Our support
-                includes regular updates, security monitoring, performance
-                optimization, content updates, and technical support when you
-                need it.
+                We stick around. Our support includes maintenance, security checks, speed optimization, and updates — we&apos;ve got you covered long-term.
               </>
             ),
           },
@@ -250,8 +212,8 @@ export default function WebDevelopmentService() {
 
       {/* CTA Section */}
       <CtaSection
-        title="Elevate Your Online Presence with Burraq Digits"
-        paragraph="Are you ready to captivate your audience with an exceptional online presence? Contact Burraq Digits today for a free consultation and discover how our services can help you!"
+        title="Let&apos;s Build a Website That Works — Not Just Exists"
+        paragraph="We don&apos;t just build pretty websites. We build ones that perform. Let&apos;s launch something smart together."
         buttonText="GET STARTED WITH WEB DEVELOPMENT"
         buttonLink="/contact"
       />
