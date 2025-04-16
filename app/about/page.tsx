@@ -28,9 +28,9 @@ const about = () => {
 
       {/* CTA Section */}
       <CtaSection
-        title="Elevate Your Online Presence with Burraq Digits"
-        paragraph="Are you ready to captivate your audience with an exceptional online presence? Contact Burraq Digits today for a free consultation and discover how our services can help you!"
-        buttonText="Contact Us"
+        title="Let&apos;s Make Your Brand Look Good - and Work Even Better"
+        paragraph="Whether you need strategy, design, development, or content — we help businesses show up online with clarity and confidence. Ready to take the next step?"
+        buttonText="LET&apos;S TALK"
         buttonLink="/contact"
       />
     </>

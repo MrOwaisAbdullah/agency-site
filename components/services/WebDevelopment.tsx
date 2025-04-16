@@ -212,7 +212,7 @@ export default function WebDevelopmentService() {
 
       {/* CTA Section */}
       <CtaSection
-        title="Let&apos;s Build a Website That Works — Not Just Exists"
+        title="Let&apos;s Build a Website That Works - Not Just Exists"
         paragraph="We don&apos;t just build pretty websites. We build ones that perform. Let&apos;s launch something smart together."
         buttonText="GET STARTED WITH WEB DEVELOPMENT"
         buttonLink="/contact"

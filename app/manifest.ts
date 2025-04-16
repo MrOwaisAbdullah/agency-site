@@ -8,16 +8,16 @@ export default function manifest(): MetadataRoute.Manifest {
       "Not just another digital agency. We are your partners in digital transformation.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#000000",
+    background_color: "#212428",
+    theme_color: "#3a69ff",
     icons: [
       {
-        src: "/icon-192x192.png",
+        src: "/assets/logo.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/icon-512x512.png",
+        src: "/assets/logo.png",
         sizes: "512x512",
         type: "image/png",
       },

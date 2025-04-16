@@ -82,7 +82,7 @@ const Contact = () => {
             <div className="mt-4 space-y-2">
               <div>
                 <h2 className="font-semibold text-text text-xs">ADDRESS</h2>
-                <p className="mt-1">Karachi, Pakistan</p>
+                <p className="mt-1">Admin, Near Osam Masjid, A-146, Block 8 admin society, Karachi, Pakistan</p>
               </div>
               <div>
                 <h2 className="title-font font-semibold text-text text-xs">
@@ -99,8 +99,8 @@ const Contact = () => {
                 <h2 className="title-font font-semibold text-text text-xs">
                   PHONE
                 </h2>
-                <Link href={'tel:+923262283140'}>
-                  <p className="leading-relaxed">+92326234432</p>
+                <Link href={'tel:+923202019118'}>
+                  <p className="leading-relaxed">+923202019118</p>
                 </Link>
               </div>
             </div>

@@ -38,13 +38,18 @@ export default function Footer() {
 
             <div className="space-y-4">
               <div className="flex items-start">
-                <MapPin className="mr-3 h-5 w-5 text-[#3a69ff]" />
-                <span className="text-[#e5e7eb]">Karachi, Pakistan</span>
+                <MapPin className="mr-3 h-10 w-10 text-[#3a69ff]" />
+                <span className="text-[#e5e7eb]">
+                  Admin, Near Osam Masjid, A-146, Block 8 admin society,
+                  Karachi, Pakistan
+                </span>
               </div>
 
               <div className="flex items-center">
                 <Phone className="mr-3 h-5 w-5 text-[#3a69ff]" />
-                <span className="text-[#e5e7eb]">(123) 456-7890</span>
+                <Link href={"tel:+923202019118"}>
+                  <span className="text-[#e5e7eb]">+923202019118</span>
+                </Link>
               </div>
 
               <div className="flex items-center">
@@ -138,7 +143,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-              <Link
+                <Link
                   href="/services/logo-design"
                   className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
                 >
@@ -153,7 +158,6 @@ export default function Footer() {
                   Events Management
                 </Link>
               </li>
-
             </ul>
           </div>
 

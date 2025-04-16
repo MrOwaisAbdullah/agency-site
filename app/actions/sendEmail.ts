@@ -1,47 +1,50 @@
-"use server";
+'use server';
 
 import {
   TransactionalEmailsApi,
   TransactionalEmailsApiApiKeys,
-} from "@getbrevo/brevo";
-import { z } from "zod";
+} from '@getbrevo/brevo';
+import { z } from 'zod';
 
-// Define the schema for validation (same as client-side)
 const FormSchema = z.object({
-  name: z.string().min(3, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  subject: z.string().min(3, "Subject is required").max(80, "Write under 80 Characters!"),
-  message: z.string().min(3, "Message is required"),
+  name: z.string().min(3, 'Name is required'),
+  email: z.string().email('Invalid email address'),
+  subject: z.string().min(3, 'Subject is required').max(80, 'Write under 80 Characters!'),
+  message: z.string().min(3, 'Message is required'),
 });
 
-// Configure Brevo API client
 const apiInstance = new TransactionalEmailsApi();
 apiInstance.setApiKey(
   TransactionalEmailsApiApiKeys.apiKey,
-  process.env.BREVO_API_KEY || ""
+  process.env.BREVO_API_KEY || ''
 );
 
 export async function sendContactFormEmail(formData: FormData) {
-  // Parse and validate form data
+  if (!process.env.BREVO_API_KEY) {
+    console.error('BREVO_API_KEY is not set');
+    return { success: false, error: 'BREVO_API_KEY is not set' };
+  }
+
+  console.log('BREVO_API_KEY:', process.env.BREVO_API_KEY);
+
   let data;
   try {
     data = FormSchema.parse({
-      name: formData.get("name"),
-      email: formData.get("email"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
     });
   } catch (error) {
-    console.log(error)
-    return { success: false, error: "Invalid form data" };
+    console.error('Validation error:', error);
+    return { success: false, error: 'Invalid form data' };
   }
 
   const { name, email, subject, message } = data;
 
-  // Send email to agency
   const sendSmtpEmail = {
-    sender: { name: "Burraq Digits", email: "mr.fantastic0567@gmail.com" },
-    to: [{ email: "mrowaisabdullah@gmail.com" }],
+    sender: { name: 'Burraq Digits', email: 'mr.fantastic0567@gmail.com' },
+    to: [{ email: 'mrowaisabdullah@gmail.com' }],
     subject: `New Contact Form Submission: ${subject}`,
     htmlContent: `
       <p><strong>Name:</strong> ${name}</p>
@@ -51,11 +54,10 @@ export async function sendContactFormEmail(formData: FormData) {
     `,
   };
 
-  // Optionally send confirmation email to user
   const confirmationEmail = {
-    sender: { name: "Burraq Digits", email: "mr.fantastic0567@gmail.com" },
+    sender: { name: 'Burraq Digits', email: 'mr.fantastic0567@gmail.com' },
     to: [{ email }],
-    subject: "Thank You for Contacting Burraq Digits",
+    subject: 'Thank You for Contacting Burraq Digits',
     htmlContent: `
       <p>Dear ${name},</p>
       <p>Thank you for reaching out to us! We have received your message and will get back to you soon.</p>
@@ -65,16 +67,22 @@ export async function sendContactFormEmail(formData: FormData) {
   };
 
   try {
-    // Send both emails
-    await Promise.all([
+    const [agencyResponse, confirmationResponse] = await Promise.all([
       apiInstance.sendTransacEmail(sendSmtpEmail),
       apiInstance.sendTransacEmail(confirmationEmail),
     ]);
+    console.log('Emails sent:', { agencyResponse, confirmationResponse });
     return { success: true };
   } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : "Failed to send email";
-      console.log(error)
+    console.error('Error sending email:', error);
+    let errorMessage = 'Failed to send email';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+      if ('response' in error && error.response) {
+        console.error('Response body:', error.response);
+        errorMessage += `: ${JSON.stringify(error.response)}`;
+      }
+    }
     return { success: false, error: errorMessage };
   }
 }
