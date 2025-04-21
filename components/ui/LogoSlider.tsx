@@ -1,6 +1,8 @@
 "use client";
 
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import { Key } from "react";
 
 const logos = [
   "/assets/clients/al-hafiz.png",
@@ -20,7 +22,7 @@ export default function LogoSlider() {
       <div className="max-w-7xl mx-auto">
         <div className="overflow-hidden">
           <div className="w-max flex flex-nowrap slider">
-            {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+            {[...logos, ...logos, ...logos, ...logos].map((logo: string | StaticImport, index: number) => (
               <Image
                 key={index}
                 src={logo}
