@@ -2,7 +2,6 @@
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import { Key } from "react";
 
 const logos = [
   "/assets/clients/al-hafiz.png",
