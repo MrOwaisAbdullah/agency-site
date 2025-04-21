@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UI/UX Design Services | Burraq Digits",
+  title: "UI/UX Design Services",
   description:
     "Expert UI/UX design services to create intuitive, user-friendly interfaces that enhance user experience and drive engagement.",
   openGraph: {

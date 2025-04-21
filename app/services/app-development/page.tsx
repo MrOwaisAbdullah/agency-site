@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "App Development Services | Burraq Digits",
+  title: "App Development Services",
   description:
     "Custom mobile and web application development services. We build scalable, secure, and user-friendly applications for your business needs.",
   openGraph: {

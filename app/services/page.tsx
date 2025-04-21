@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import CtaSection from "@/components/CtaSection";
 
 export const metadata: Metadata = {
-  title: "Our Services | Burraq Digits",
+  title: "Our Services",
   description:
     "Explore our comprehensive digital services including web development, digital marketing, UI/UX design, app development, SEO, and more.",
   openGraph: {

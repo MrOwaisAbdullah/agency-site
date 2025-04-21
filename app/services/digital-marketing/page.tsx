@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services | Burraq Digits",
+  title: "Digital Marketing Services",
   description:
     "Comprehensive digital marketing solutions to grow your online presence. SEO, social media, content marketing, and more.",
   openGraph: {

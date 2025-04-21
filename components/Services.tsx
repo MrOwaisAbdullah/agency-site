@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
 import FadeInSection from "./FadeInSection";
+import { title } from "process";
 
 const allServices = [
   {
@@ -61,6 +62,13 @@ const allServices = [
       "Compeling content that tells your brand story and connects with your audience across all platforms.",
     link: "/services/logo-design",
   },
+  {
+    image: "/assets/services/outdoor-marketing.jpg",
+    title : "Outdoor Marketing",
+    description:
+        "Innovative outdoor marketing strategies that capture attention and drive foot traffic to your business.",
+    link: "/services/outdoor-marketing",
+  }
 ];
 
 const Services = () => {

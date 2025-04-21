@@ -158,6 +158,14 @@ export default function Footer() {
                   Events Management
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/outdoor-marketing"
+                  className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
+                >
+                  Outdoor Marketing
+                </Link>
+              </li>
             </ul>
           </div>
 

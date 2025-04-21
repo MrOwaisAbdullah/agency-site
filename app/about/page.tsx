@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "About Us | Burraq Digits",
+  title: "About Us",
   description:
     "Learn about Burraq Digits - your trusted partner in digital transformation. Discover our mission, vision, and the team behind our success.",
   openGraph: {

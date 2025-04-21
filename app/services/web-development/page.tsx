@@ -2,7 +2,7 @@ import WebDevelopmentService from "@/components/services/WebDevelopment";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Development Services | Burraq Digits",
+  title: "Web Development Services",
   description:
   "Professional web design and development services to create stunning, user-friendly websites that drive results for your business.",
   openGraph: {

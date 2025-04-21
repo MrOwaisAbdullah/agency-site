@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Events Management Services | Burraq Digits",
+  title: "Events Management Services",
   description:
     "Professional event management services for digital and physical events. We handle planning, execution, and promotion to ensure successful events.",
   openGraph: {

@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SEO Services | Burraq Digits",
+  title: "SEO Services",
   description:
     "Burraq Digits is a leading SEO service provider, offering tailored strategies to enhance your online visibility and drive organic traffic. Our expert team specializes in on-page and off-page optimization, keyword research, and content marketing to ensure your website ranks higher on search engines. Partner with us for effective SEO solutions that deliver results.",
   keywords:

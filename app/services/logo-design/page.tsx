@@ -3,7 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Logo Design Services | Burraq Digits",
+  title: "Logo Design Services",
   description:
     "Professional logo design services to create unique, memorable brand identities that represent your business values and vision.",
   openGraph: {

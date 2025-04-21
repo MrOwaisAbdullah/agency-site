@@ -3,9 +3,15 @@
 import Image from "next/image";
 
 const logos = [
-  "/assets/logo.png",
-  "/assets/logo1.png",
-  "/assets/logo2.png",
+  "/assets/clients/al-hafiz.png",
+  "/assets/clients/ac-wala.png",
+  "/assets/clients/dr-mohiuddin.png",
+  "/assets/clients/hawwa.png",
+  "/assets/clients/maarij.png",
+  "/assets/clients/malabis.png",
+  "/assets/clients/slc.png",
+  "/assets/clients/tech-academy.png",
+
 ];
 
 export default function LogoSlider() {
@@ -21,7 +27,7 @@ export default function LogoSlider() {
                 alt={`Client logo ${(index % logos.length) + 1}`}
                 width={300}
                 height={150}
-                className="mx-6 h-16 w-auto object-contain grayscale transition-all 
+                className="mx-6 h-20 w-auto object-contain grayscale transition-all 
                   hover:grayscale-0 dark:opacity-80 dark:hover:opacity-100"
                 onError={() => console.error(`Failed to load image: ${logo}`)}
               />

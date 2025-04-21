@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Burraq Digits",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/assets/logo.png",
         width: 1200,
         height: 630,
         alt: "Burraq Digits",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Burraq Digits | Step Together Digitally",
     description:
       "Not just another digital agency. We are your partners in digital transformation.",
-    images: ["/twitter-image.jpg"],
+    images: ["/assets/logo.png"],
   },
   robots: {
     index: true,
