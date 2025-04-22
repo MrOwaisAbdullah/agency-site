@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -102,40 +103,31 @@ export function InstallPrompt() {
     setWasManuallyClosed(true); // Don't show again after manual close
   };
 
-  if (isStandalone || !isVisible) return null;
+  if (isStandalone) return null;
 
   return (
-    <>
+    <AnimatePresence mode="wait">
       {!isOnline && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-red-600 text-white rounded-lg shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-red-600 text-white rounded-lg shadow-lg"
+        >
           You are currently offline. Some features may be limited.
-        </div>
+        </motion.div>
       )}
 
-      {isIOS ? (
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs">
-          <button
-            onClick={handleClose}
-            className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded-full transition-colors"
-            aria-label="Close"
+      {isVisible &&
+        (isIOS ? (
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs"
           >
-            <X size={16} />
-          </button>
-          <h3 className="text-lg font-semibold mb-2">Install App</h3>
-          <p className="text-sm text-gray-400">
-            To install Burraq Digits app, tap the share button{" "}
-            <span role="img" aria-label="share icon">
-              ⎋
-            </span>{" "}
-            and then &ldquo;Add to Home Screen&rdquo;{" "}
-            <span role="img" aria-label="plus icon">
-              ➕
-            </span>
-          </p>
-        </div>
-      ) : (
-        deferredPrompt && (
-          <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs">
             <button
               onClick={handleClose}
               className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded-full transition-colors"
@@ -144,18 +136,46 @@ export function InstallPrompt() {
               <X size={16} />
             </button>
             <h3 className="text-lg font-semibold mb-2">Install App</h3>
-            <p className="text-sm text-gray-400 mb-3">
-              Install our app for a better experience
+            <p className="text-sm text-gray-400">
+              To install Burraq Digits app, tap the share button{" "}
+              <span role="img" aria-label="share icon">
+                ⎋
+              </span>{" "}
+              and then &ldquo;Add to Home Screen&rdquo;{" "}
+              <span role="img" aria-label="plus icon">
+                ➕
+              </span>
             </p>
-            <button
-              onClick={handleInstallClick}
-              className="bg-accent text-white px-4 py-2 rounded-md text-sm hover:bg-accent/90 transition-colors"
+          </motion.div>
+        ) : (
+          deferredPrompt && (
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs"
             >
-              Install
-            </button>
-          </div>
-        )
-      )}
-    </>
+              <button
+                onClick={handleClose}
+                className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded-full transition-colors"
+                aria-label="Close"
+              >
+                <X size={16} />
+              </button>
+              <h3 className="text-lg font-semibold mb-2">Install App</h3>
+              <p className="text-sm text-gray-400 mb-3">
+                Install our app for a better experience
+              </p>
+              <button
+                onClick={handleInstallClick}
+                className="bg-accent text-white px-4 py-2 rounded-md text-sm hover:bg-accent/90 transition-colors"
+              >
+                Install
+              </button>
+            </motion.div>
+          )
+        ))}
+    </AnimatePresence>
   );
 }
