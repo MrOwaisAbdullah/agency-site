@@ -28,8 +28,8 @@ export function InstallPrompt() {
     );
     setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
 
-    // Initial delay to show the prompt (3-5 seconds)
-    const initialDelay = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000;
+    // Initial delay to show the prompt (5-7 seconds for more natural timing)
+    const initialDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
     const showTimeout = setTimeout(() => {
       if (!wasManuallyClosed) {
         setIsVisible(true);
@@ -60,19 +60,19 @@ export function InstallPrompt() {
     };
   }, [wasManuallyClosed]);
 
-  // Effect for auto-hide and re-show behavior
+  // Effect for auto-hide and re-show behavior with more natural timing
   useEffect(() => {
     if (!isVisible || wasManuallyClosed) return;
 
-    // Auto-hide after 5-8 seconds
-    const hideDelay = Math.floor(Math.random() * (8000 - 5000 + 1)) + 5000;
+    // Auto-hide after 8-10 seconds (increased from 5-8)
+    const hideDelay = Math.floor(Math.random() * (10000 - 8000 + 1)) + 8000;
     const hideTimeout = setTimeout(() => {
       if (!wasManuallyClosed) {
         setIsVisible(false);
 
-        // Re-show after 10-12 seconds
+        // Re-show after 15-18 seconds (increased from 10-12)
         const reshowDelay =
-          Math.floor(Math.random() * (12000 - 10000 + 1)) + 10000;
+          Math.floor(Math.random() * (18000 - 15000 + 1)) + 15000;
         const reshowTimeout = setTimeout(() => {
           if (!wasManuallyClosed) {
             setIsVisible(true);
@@ -94,13 +94,13 @@ export function InstallPrompt() {
 
     if (outcome === "accepted") {
       setDeferredPrompt(null);
-      setWasManuallyClosed(true); // Don't show again after installation
+      setWasManuallyClosed(true);
     }
   };
 
   const handleClose = () => {
     setIsVisible(false);
-    setWasManuallyClosed(true); // Don't show again after manual close
+    setWasManuallyClosed(true);
   };
 
   if (isStandalone) return null;
@@ -112,8 +112,13 @@ export function InstallPrompt() {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -100 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-red-600 text-white rounded-lg shadow-lg"
+          transition={{
+            type: "spring",
+            stiffness: 100, // Reduced from 260 for smoother motion
+            damping: 15, // Reduced from 20 for slight bounce
+            duration: 0.7, // Added duration for more controlled animation
+          }}
+          className="fixed top-4 inset-x-0 mx-auto max-w-md z-50 p-4 bg-red-600 text-white rounded-lg shadow-lg"
         >
           You are currently offline. Some features may be limited.
         </motion.div>
@@ -125,8 +130,13 @@ export function InstallPrompt() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs"
+            transition={{
+              type: "spring",
+              stiffness: 100, // Reduced for smoother motion
+              damping: 15, // Reduced for slight bounce
+              duration: 0.7, // Added duration for more controlled animation
+            }}
+            className="fixed bottom-4 inset-x-0 mx-auto z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] max-w-md"
           >
             <button
               onClick={handleClose}
@@ -153,8 +163,13 @@ export function InstallPrompt() {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
-              transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] md:w-auto md:max-w-xs"
+              transition={{
+                type: "spring",
+                stiffness: 100, // Reduced for smoother motion
+                damping: 15, // Reduced for slight bounce
+                duration: 0.7, // Added duration for more controlled animation
+              }}
+              className="fixed bottom-4 inset-x-0 mx-auto z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] max-w-md"
             >
               <button
                 onClick={handleClose}
