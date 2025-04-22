@@ -6,6 +6,10 @@ import FloatingNavbar from "@/components/FloatingNavbar";
 import Script from "next/script";
 import { Montserrat, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import {
+  PushNotificationManager,
+  InstallPrompt,
+} from "@/components/ui/PwaManager";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -27,6 +31,52 @@ export const metadata: Metadata = {
   },
   description:
     "Not just another digital agency. We are your partners in digital transformation.",
+  applicationName: "Burraq Digits",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Burraq Digits",
+    startupImage: [
+      {
+        url: "/assets/logo-512.png",
+        media:
+          "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "/assets/logo-512.png",
+        media:
+          "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "/assets/logo-512.png",
+        media:
+          "(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)",
+      },
+    ],
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+  themeColor: "#3a69ff",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/assets/logo-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/assets/logo-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/assets/logo-192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   keywords: [
     "digital agency",
     "web development",
@@ -38,11 +88,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Burraq Digits" }],
   creator: "Burraq Digits",
   publisher: "Burraq Digits",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://burraqdigits.com"),
   alternates: {
     canonical: "/",
@@ -150,6 +195,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <PushNotificationManager />
+        <InstallPrompt />
         <Analytics />
       </body>
     </html>

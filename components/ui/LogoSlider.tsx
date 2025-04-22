@@ -12,6 +12,10 @@ const logos = [
   "/assets/clients/malabis.png",
   "/assets/clients/slc.png",
   "/assets/clients/tech-academy.png",
+  "/assets/clients/anmwa.png",
+  "/assets/clients/icon.png",
+  "/assets/clients/mrc.png",
+  "/assets/clients/famous.png",
 
 ];
 

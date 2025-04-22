@@ -60,7 +60,7 @@ const Contact = () => {
     } else {
       setSubmissionStatus({
         success: false,
-        message: result.error || 'Failed to send message',
+        message: 'Failed to send message, Try Again!!!',
       });
       setError('root', { message: result.error });
     }
