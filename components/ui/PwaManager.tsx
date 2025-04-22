@@ -18,13 +18,22 @@ export function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
   const [isOnline, setIsOnline] = useState(true);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const [wasManuallyClosed, setWasManuallyClosed] = useState(false);
 
   useEffect(() => {
     setIsIOS(
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window)
     );
     setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
+
+    // Initial delay to show the prompt (3-5 seconds)
+    const initialDelay = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000;
+    const showTimeout = setTimeout(() => {
+      if (!wasManuallyClosed) {
+        setIsVisible(true);
+      }
+    }, initialDelay);
 
     // Handle PWA install prompt
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -40,6 +49,7 @@ export function InstallPrompt() {
     window.addEventListener("offline", handleOnlineStatus);
 
     return () => {
+      clearTimeout(showTimeout);
       window.removeEventListener(
         "beforeinstallprompt",
         handleBeforeInstallPrompt
@@ -47,7 +57,33 @@ export function InstallPrompt() {
       window.removeEventListener("online", handleOnlineStatus);
       window.removeEventListener("offline", handleOnlineStatus);
     };
-  }, []);
+  }, [wasManuallyClosed]);
+
+  // Effect for auto-hide and re-show behavior
+  useEffect(() => {
+    if (!isVisible || wasManuallyClosed) return;
+
+    // Auto-hide after 5-8 seconds
+    const hideDelay = Math.floor(Math.random() * (8000 - 5000 + 1)) + 5000;
+    const hideTimeout = setTimeout(() => {
+      if (!wasManuallyClosed) {
+        setIsVisible(false);
+
+        // Re-show after 10-12 seconds
+        const reshowDelay =
+          Math.floor(Math.random() * (12000 - 10000 + 1)) + 10000;
+        const reshowTimeout = setTimeout(() => {
+          if (!wasManuallyClosed) {
+            setIsVisible(true);
+          }
+        }, reshowDelay);
+
+        return () => clearTimeout(reshowTimeout);
+      }
+    }, hideDelay);
+
+    return () => clearTimeout(hideTimeout);
+  }, [isVisible, wasManuallyClosed]);
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
@@ -57,11 +93,13 @@ export function InstallPrompt() {
 
     if (outcome === "accepted") {
       setDeferredPrompt(null);
+      setWasManuallyClosed(true); // Don't show again after installation
     }
   };
 
   const handleClose = () => {
     setIsVisible(false);
+    setWasManuallyClosed(true); // Don't show again after manual close
   };
 
   if (isStandalone || !isVisible) return null;
