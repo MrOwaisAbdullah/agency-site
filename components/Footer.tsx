@@ -187,7 +187,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/projects"
                   className="inline-block text-[#e5e7eb] transition-colors hover:text-[#3a69ff]"
                 >
                   Our Work
