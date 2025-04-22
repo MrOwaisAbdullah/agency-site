@@ -7,7 +7,6 @@ import Script from "next/script";
 import { Montserrat, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import {
-  PushNotificationManager,
   InstallPrompt,
 } from "@/components/ui/PwaManager";
 
@@ -195,7 +194,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <PushNotificationManager />
         <InstallPrompt />
         <Analytics />
       </body>

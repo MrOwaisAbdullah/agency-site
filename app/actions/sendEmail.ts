@@ -71,7 +71,7 @@ export async function sendContactFormEmail(formData: FormData) {
       apiInstance.sendTransacEmail(sendSmtpEmail),
       apiInstance.sendTransacEmail(confirmationEmail),
     ]);
-    // console.log('Emails sent:', { agencyResponse, confirmationResponse });
+    console.log('Emails sent:', { agencyResponse, confirmationResponse });
     return { success: true };
   } catch (error) {
     console.error('Error sending email:', error);
