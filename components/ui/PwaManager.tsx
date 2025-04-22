@@ -14,8 +14,8 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 declare global {
-  interface WindowEventMap {
-    beforeinstallprompt: BeforeInstallPromptEvent;
+  interface Window {
+    deferredPrompt: BeforeInstallPromptEvent | null;
   }
 }
 
@@ -32,6 +32,7 @@ export function InstallPrompt() {
     }
     return 0;
   });
+
   const [wasManuallyClosed, setWasManuallyClosed] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("wasManuallyClosed") === "true";
@@ -42,72 +43,94 @@ export function InstallPrompt() {
   const MAX_DISPLAYS = 4;
 
   const updateDisplayCount = useCallback(() => {
-    if (displayCount < MAX_DISPLAYS && !wasManuallyClosed) {
-      const newCount = displayCount + 1;
-      setDisplayCount(newCount);
-      localStorage.setItem("pwaDisplayCount", String(newCount));
-      return true;
-    }
-    return false;
-  }, [displayCount, wasManuallyClosed]);
+    const newCount = displayCount + 1;
+    setDisplayCount(newCount);
+    localStorage.setItem("pwaDisplayCount", String(newCount));
+  }, [displayCount]);
 
-  const showPrompt = useCallback(() => {
-    if (!isVisible && updateDisplayCount()) {
-      setIsVisible(true);
+  const showInstallPrompt = useCallback(async () => {
+    if (!deferredPrompt) return;
+
+    try {
+      await deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+
+      if (outcome === "accepted") {
+        setDeferredPrompt(null);
+        window.deferredPrompt = null;
+        setIsVisible(false);
+        setWasManuallyClosed(true);
+        localStorage.setItem("pwaDisplayCount", String(MAX_DISPLAYS));
+        localStorage.setItem("wasManuallyClosed", "true");
+      } else if (outcome === "dismissed") {
+        // Only increment display count on dismiss
+        updateDisplayCount();
+      }
+    } catch (error) {
+      console.error("Error showing install prompt:", error);
     }
-  }, [isVisible, updateDisplayCount]);
+  }, [deferredPrompt, updateDisplayCount]);
 
   // Handle beforeinstallprompt event
   useEffect(() => {
-    let installPromptTimer: NodeJS.Timeout;
-
     const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent) => {
       e.preventDefault();
       setDeferredPrompt(e);
+      window.deferredPrompt = e;
 
-      // Add a small delay to ensure browser is ready
-      installPromptTimer = setTimeout(() => {
-        if (displayCount < MAX_DISPLAYS && !wasManuallyClosed) {
-          showPrompt();
-        }
-      }, 1000);
+      // Show prompt if conditions are met
+      if (displayCount < MAX_DISPLAYS && !wasManuallyClosed && !isStandalone) {
+        setIsVisible(true);
+      }
     };
 
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    window.addEventListener(
+      "beforeinstallprompt",
+      handleBeforeInstallPrompt as any
+    );
+
+    // Check if we have a deferred prompt
+    if (
+      window.deferredPrompt &&
+      !isVisible &&
+      displayCount < MAX_DISPLAYS &&
+      !wasManuallyClosed &&
+      !isStandalone
+    ) {
+      setDeferredPrompt(window.deferredPrompt);
+      setIsVisible(true);
+    }
 
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
-        handleBeforeInstallPrompt
+        handleBeforeInstallPrompt as any
       );
-      clearTimeout(installPromptTimer);
     };
-  }, [displayCount, wasManuallyClosed, showPrompt]);
+  }, [displayCount, wasManuallyClosed, isVisible, isStandalone]);
 
-  // Platform detection and standalone check
+  // Platform detection and online status
   useEffect(() => {
     const checkPlatform = () => {
       const userAgent = window.navigator.userAgent.toLowerCase();
-      setIsIOS(
-        /iphone|ipad|ipod/.test(userAgent) &&
-          !("standalone" in window.navigator)
+      setIsIOS(/iphone|ipad|ipod/.test(userAgent));
+      setIsStandalone(
+        window.matchMedia("(display-mode: standalone)").matches ||
+          (window.navigator as any).standalone === true
       );
-      setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
     };
 
-    checkPlatform();
-    window.addEventListener("resize", checkPlatform);
-
-    return () => window.removeEventListener("resize", checkPlatform);
-  }, []);
-
-  // Online/Offline detection
-  useEffect(() => {
     const handleOnlineStatus = () => setIsOnline(navigator.onLine);
+
+    checkPlatform();
+    handleOnlineStatus();
+
+    window.addEventListener("resize", checkPlatform);
     window.addEventListener("online", handleOnlineStatus);
     window.addEventListener("offline", handleOnlineStatus);
 
     return () => {
+      window.removeEventListener("resize", checkPlatform);
       window.removeEventListener("online", handleOnlineStatus);
       window.removeEventListener("offline", handleOnlineStatus);
     };
@@ -119,51 +142,30 @@ export function InstallPrompt() {
       !isIOS ||
       wasManuallyClosed ||
       displayCount >= MAX_DISPLAYS ||
-      isVisible
+      isVisible ||
+      isStandalone
     )
       return;
 
     const showDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
-    const showTimer = setTimeout(showPrompt, showDelay);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      updateDisplayCount();
+    }, showDelay);
 
-    return () => clearTimeout(showTimer);
-  }, [isIOS, wasManuallyClosed, displayCount, isVisible, showPrompt]);
+    return () => clearTimeout(timer);
+  }, [
+    isIOS,
+    wasManuallyClosed,
+    displayCount,
+    isVisible,
+    isStandalone,
+    updateDisplayCount,
+  ]);
 
-  // Auto-hide logic
-  useEffect(() => {
-    if (!isVisible || wasManuallyClosed) return;
-
-    const hideDelay = Math.floor(Math.random() * (10000 - 8000 + 1)) + 8000;
-    const hideTimer = setTimeout(() => {
-      setIsVisible(false);
-
-      // Schedule next show if needed
-      if (displayCount < MAX_DISPLAYS && !wasManuallyClosed) {
-        const reshowDelay =
-          Math.floor(Math.random() * (18000 - 15000 + 1)) + 15000;
-        setTimeout(showPrompt, reshowDelay);
-      }
-    }, hideDelay);
-
-    return () => clearTimeout(hideTimer);
-  }, [isVisible, wasManuallyClosed, displayCount, showPrompt]);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-
-    try {
-      await deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-
-      if (outcome === "accepted") {
-        setDeferredPrompt(null);
-        setIsVisible(false);
-        setWasManuallyClosed(true);
-        localStorage.setItem("pwaDisplayCount", String(MAX_DISPLAYS));
-        localStorage.setItem("wasManuallyClosed", "true");
-      }
-    } catch (error) {
-      console.error("Install prompt error:", error);
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      showInstallPrompt();
     }
   };
 
@@ -171,6 +173,7 @@ export function InstallPrompt() {
     setIsVisible(false);
     setWasManuallyClosed(true);
     localStorage.setItem("wasManuallyClosed", "true");
+    updateDisplayCount();
   };
 
   if (isStandalone || displayCount >= MAX_DISPLAYS) return null;
