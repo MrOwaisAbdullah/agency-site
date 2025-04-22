@@ -20,7 +20,12 @@ export function InstallPrompt() {
     useState<BeforeInstallPromptEvent | null>(null);
   const [isOnline, setIsOnline] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
-  const [wasManuallyClosed, setWasManuallyClosed] = useState(false);
+  const [wasManuallyClosed, setWasManuallyClosed] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("wasManuallyClosed") === "true";
+    }
+    return false;
+  });
   const [displayCount, setDisplayCount] = useState(() => {
     if (typeof window !== "undefined") {
       return Number(localStorage.getItem("pwaDisplayCount")) || 0;
@@ -28,15 +33,41 @@ export function InstallPrompt() {
     return 0;
   });
 
+  // Handle beforeinstallprompt event first
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
+      // Show prompt immediately for Android if we haven't shown it 3 times
+      if (displayCount < 3 && !wasManuallyClosed) {
+        setIsVisible(true);
+        const newCount = displayCount + 1;
+        setDisplayCount(newCount);
+        localStorage.setItem("pwaDisplayCount", String(newCount));
+      }
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    return () =>
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
+  }, [displayCount, wasManuallyClosed]);
+
+  // Set up iOS detection and online status
   useEffect(() => {
     setIsIOS(
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window)
     );
     setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
 
-    // Only show if we haven't reached the display limit
-    if (displayCount < 3 && !wasManuallyClosed) {
-      // Initial delay to show the prompt (5-7 seconds)
+    const handleOnlineStatus = () => setIsOnline(navigator.onLine);
+    window.addEventListener("online", handleOnlineStatus);
+    window.addEventListener("offline", handleOnlineStatus);
+
+    // Only show iOS prompt if we haven't reached the display limit
+    if (isIOS && displayCount < 3 && !wasManuallyClosed) {
       const initialDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
       const showTimeout = setTimeout(() => {
         setIsVisible(true);
@@ -45,22 +76,28 @@ export function InstallPrompt() {
         localStorage.setItem("pwaDisplayCount", String(newCount));
       }, initialDelay);
 
-      return () => clearTimeout(showTimeout);
+      return () => {
+        clearTimeout(showTimeout);
+        window.removeEventListener("online", handleOnlineStatus);
+        window.removeEventListener("offline", handleOnlineStatus);
+      };
     }
-  }, [wasManuallyClosed, displayCount]);
 
-  // Effect for auto-hide and re-show behavior
+    return () => {
+      window.removeEventListener("online", handleOnlineStatus);
+      window.removeEventListener("offline", handleOnlineStatus);
+    };
+  }, [isIOS, displayCount, wasManuallyClosed]);
+
+  // Effect for auto-hide and re-show behavior (only for iOS)
   useEffect(() => {
-    if (!isVisible || wasManuallyClosed || displayCount >= 3) return;
+    if (!isVisible || wasManuallyClosed || displayCount >= 3 || !isIOS) return;
 
-    // Auto-hide after 8-10 seconds
     const hideDelay = Math.floor(Math.random() * (10000 - 8000 + 1)) + 8000;
     const hideTimeout = setTimeout(() => {
       setIsVisible(false);
 
-      // Only schedule re-show if we haven't reached display limit
       if (displayCount < 3) {
-        // Re-show after 15-18 seconds
         const reshowDelay =
           Math.floor(Math.random() * (18000 - 15000 + 1)) + 15000;
         const reshowTimeout = setTimeout(() => {
@@ -77,29 +114,7 @@ export function InstallPrompt() {
     }, hideDelay);
 
     return () => clearTimeout(hideTimeout);
-  }, [isVisible, wasManuallyClosed, displayCount]);
-
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
-    };
-
-    const handleOnlineStatus = () => setIsOnline(navigator.onLine);
-
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    window.addEventListener("online", handleOnlineStatus);
-    window.addEventListener("offline", handleOnlineStatus);
-
-    return () => {
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt
-      );
-      window.removeEventListener("online", handleOnlineStatus);
-      window.removeEventListener("offline", handleOnlineStatus);
-    };
-  }, []);
+  }, [isVisible, wasManuallyClosed, displayCount, isIOS]);
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
@@ -110,7 +125,8 @@ export function InstallPrompt() {
     if (outcome === "accepted") {
       setDeferredPrompt(null);
       setWasManuallyClosed(true);
-      localStorage.setItem("pwaDisplayCount", "3"); // Stop showing after install
+      localStorage.setItem("pwaDisplayCount", "3");
+      localStorage.setItem("wasManuallyClosed", "true");
     }
   };
 
