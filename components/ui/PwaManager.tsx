@@ -20,92 +20,62 @@ export function InstallPrompt() {
     useState<BeforeInstallPromptEvent | null>(null);
   const [isOnline, setIsOnline] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
-  const [wasManuallyClosed, setWasManuallyClosed] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("wasManuallyClosed") === "true";
-    }
-    return false;
-  });
-  const [displayCount, setDisplayCount] = useState(() => {
-    if (typeof window !== "undefined") {
-      return Number(localStorage.getItem("pwaDisplayCount")) || 0;
-    }
-    return 0;
-  });
+  const [wasManuallyClosed, setWasManuallyClosed] = useState(false);
 
-  // Handle beforeinstallprompt event first
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
-      // Show prompt immediately for Android if we haven't shown it 3 times
-      if (displayCount < 3 && !wasManuallyClosed) {
-        setIsVisible(true);
-        const newCount = displayCount + 1;
-        setDisplayCount(newCount);
-        localStorage.setItem("pwaDisplayCount", String(newCount));
-      }
-    };
-
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    return () =>
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt
-      );
-  }, [displayCount, wasManuallyClosed]);
-
-  // Set up iOS detection and online status
   useEffect(() => {
     setIsIOS(
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !("MSStream" in window)
     );
     setIsStandalone(window.matchMedia("(display-mode: standalone)").matches);
 
+    // Initial delay to show the prompt (5-7 seconds for more natural timing)
+    const initialDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
+    const showTimeout = setTimeout(() => {
+      if (!wasManuallyClosed) {
+        setIsVisible(true);
+      }
+    }, initialDelay);
+
+    // Handle PWA install prompt
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    // Handle online/offline status
     const handleOnlineStatus = () => setIsOnline(navigator.onLine);
     window.addEventListener("online", handleOnlineStatus);
     window.addEventListener("offline", handleOnlineStatus);
 
-    // Only show iOS prompt if we haven't reached the display limit
-    if (isIOS && displayCount < 3 && !wasManuallyClosed) {
-      const initialDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
-      const showTimeout = setTimeout(() => {
-        setIsVisible(true);
-        const newCount = displayCount + 1;
-        setDisplayCount(newCount);
-        localStorage.setItem("pwaDisplayCount", String(newCount));
-      }, initialDelay);
-
-      return () => {
-        clearTimeout(showTimeout);
-        window.removeEventListener("online", handleOnlineStatus);
-        window.removeEventListener("offline", handleOnlineStatus);
-      };
-    }
-
     return () => {
+      clearTimeout(showTimeout);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
       window.removeEventListener("online", handleOnlineStatus);
       window.removeEventListener("offline", handleOnlineStatus);
     };
-  }, [isIOS, displayCount, wasManuallyClosed]);
+  }, [wasManuallyClosed]);
 
-  // Effect for auto-hide and re-show behavior (only for iOS)
+  // Effect for auto-hide and re-show behavior with more natural timing
   useEffect(() => {
-    if (!isVisible || wasManuallyClosed || displayCount >= 3 || !isIOS) return;
+    if (!isVisible || wasManuallyClosed) return;
 
-    const hideDelay = Math.floor(Math.random() * (10000 - 8000 + 1)) + 8000;
+    // Auto-hide after 8-10 seconds (increased from 5-8)
+    const hideDelay = Math.floor(Math.random() * (10000 - 6000 + 1)) + 6000;
     const hideTimeout = setTimeout(() => {
-      setIsVisible(false);
+      if (!wasManuallyClosed) {
+        setIsVisible(false);
 
-      if (displayCount < 3) {
+        // Re-show after 15-18 seconds (increased from 10-12)
         const reshowDelay =
           Math.floor(Math.random() * (18000 - 15000 + 1)) + 15000;
         const reshowTimeout = setTimeout(() => {
           if (!wasManuallyClosed) {
             setIsVisible(true);
-            const newCount = displayCount + 1;
-            setDisplayCount(newCount);
-            localStorage.setItem("pwaDisplayCount", String(newCount));
           }
         }, reshowDelay);
 
@@ -114,7 +84,7 @@ export function InstallPrompt() {
     }, hideDelay);
 
     return () => clearTimeout(hideTimeout);
-  }, [isVisible, wasManuallyClosed, displayCount, isIOS]);
+  }, [isVisible, wasManuallyClosed]);
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
@@ -125,18 +95,15 @@ export function InstallPrompt() {
     if (outcome === "accepted") {
       setDeferredPrompt(null);
       setWasManuallyClosed(true);
-      localStorage.setItem("pwaDisplayCount", "3");
-      localStorage.setItem("wasManuallyClosed", "true");
     }
   };
 
   const handleClose = () => {
     setIsVisible(false);
     setWasManuallyClosed(true);
-    localStorage.setItem("wasManuallyClosed", "true");
   };
 
-  if (isStandalone || displayCount >= 3) return null;
+  if (isStandalone) return null;
 
   return (
     <AnimatePresence mode="wait">
@@ -147,9 +114,9 @@ export function InstallPrompt() {
           exit={{ opacity: 0, y: -100 }}
           transition={{
             type: "spring",
-            stiffness: 100,
-            damping: 15,
-            duration: 0.7,
+            stiffness: 100, // Reduced from 260 for smoother motion
+            damping: 15, // Reduced from 20 for slight bounce
+            duration: 0.7, // Added duration for more controlled animation
           }}
           className="fixed top-4 inset-x-0 mx-auto max-w-md z-50 p-4 bg-red-600 text-white rounded-lg shadow-lg"
         >
@@ -165,9 +132,9 @@ export function InstallPrompt() {
             exit={{ opacity: 0, y: 100 }}
             transition={{
               type: "spring",
-              stiffness: 100,
-              damping: 15,
-              duration: 0.7,
+              stiffness: 100, // Reduced for smoother motion
+              damping: 15, // Reduced for slight bounce
+              duration: 0.7, // Added duration for more controlled animation
             }}
             className="fixed bottom-4 inset-x-0 mx-auto z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] max-w-md"
           >
@@ -198,9 +165,9 @@ export function InstallPrompt() {
               exit={{ opacity: 0, y: 100 }}
               transition={{
                 type: "spring",
-                stiffness: 100,
-                damping: 15,
-                duration: 0.7,
+                stiffness: 100, // Reduced for smoother motion
+                damping: 15, // Reduced for slight bounce
+                duration: 0.7, // Added duration for more controlled animation
               }}
               className="fixed bottom-4 inset-x-0 mx-auto z-50 p-4 bg-background border border-gray-800 rounded-lg shadow-lg w-[80%] max-w-md"
             >
