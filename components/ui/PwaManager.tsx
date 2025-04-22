@@ -21,7 +21,12 @@ export function InstallPrompt() {
   const [isOnline, setIsOnline] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [wasManuallyClosed, setWasManuallyClosed] = useState(false);
-  const [displayCount, setDisplayCount] = useState(0);
+  const [displayCount, setDisplayCount] = useState(() => {
+    if (typeof window !== "undefined") {
+      return Number(localStorage.getItem("pwaDisplayCount")) || 0;
+    }
+    return 0;
+  });
 
   useEffect(() => {
     setIsIOS(
@@ -35,7 +40,9 @@ export function InstallPrompt() {
       const initialDelay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
       const showTimeout = setTimeout(() => {
         setIsVisible(true);
-        setDisplayCount((prev) => prev + 1);
+        const newCount = displayCount + 1;
+        setDisplayCount(newCount);
+        localStorage.setItem("pwaDisplayCount", String(newCount));
       }, initialDelay);
 
       return () => clearTimeout(showTimeout);
@@ -59,7 +66,9 @@ export function InstallPrompt() {
         const reshowTimeout = setTimeout(() => {
           if (!wasManuallyClosed) {
             setIsVisible(true);
-            setDisplayCount((prev) => prev + 1);
+            const newCount = displayCount + 1;
+            setDisplayCount(newCount);
+            localStorage.setItem("pwaDisplayCount", String(newCount));
           }
         }, reshowDelay);
 
@@ -101,12 +110,14 @@ export function InstallPrompt() {
     if (outcome === "accepted") {
       setDeferredPrompt(null);
       setWasManuallyClosed(true);
+      localStorage.setItem("pwaDisplayCount", "3"); // Stop showing after install
     }
   };
 
   const handleClose = () => {
     setIsVisible(false);
     setWasManuallyClosed(true);
+    localStorage.setItem("wasManuallyClosed", "true");
   };
 
   if (isStandalone || displayCount >= 3) return null;
