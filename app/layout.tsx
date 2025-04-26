@@ -92,7 +92,7 @@ export default function RootLayout({
         <Analytics />
         {/* WhatsApp Button */}
         <WhatsAppButton
-          phoneNumber="+1234567890"
+          phoneNumber="+923202019118"
           message="Hello, I'm interested in your services!"
           tooltipMessages={[
             "Hi, Need Our Help?",
