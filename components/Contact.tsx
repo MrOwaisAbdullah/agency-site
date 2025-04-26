@@ -12,10 +12,10 @@ import { sendContactFormEmail } from '@/app/actions/sendEmail';
 
 // Define Zod schema for form validation
 const FormSchema = z.object({
-  name: z.string().min(3, 'Name is required'),
+  name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email address'),
-  subject: z.string().min(3, "Subject is required").max(80, "Write under 80 Characters!"),
-  message: z.string().min(3, 'Message is required'),
+  subject: z.string().min(1, "Subject is required").max(80, "Write under 80 Characters!"),
+  message: z.string().min(1, 'Message is required'),
 });
 
 type FormData = z.infer<typeof FormSchema>;
@@ -106,7 +106,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="md:w-1/2 w-full bg-background flex flex-col md:ml-auto mt-8 md:mt-0 font-montserrat">
+          <div className="md:w-1/2 mx-auto w-full bg-background flex flex-col md:ml-auto mt-8 md:mt-0 font-montserrat">
             <h2 className="font-semibold text-text text-2xl sm:text-3xl">
               LET&apos;S TALK
             </h2>

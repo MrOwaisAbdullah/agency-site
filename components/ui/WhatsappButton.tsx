@@ -101,7 +101,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   }
 
   return (
-    <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-50 flex items-end">
+    <div className="fixed bottom-5 right-4 md:bottom-6 md:right-6 z-50 flex items-end">
       <AnimatePresence>
         {showTooltip && (
           <motion.div
@@ -112,7 +112,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
             className="mb-1 md:mb-2 mr-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 p-2 sm:px-5 sm:py-3 shadow-lg relative"
           >
             <div className="flex items-center">
-              <MessageSquare className="mr-2 h-2 w-2 md:h-4 md:w-4 text-white" />
+              <MessageSquare className="mr-2 h-4 w-4 text-white" />
               <motion.p
                 key={currentTooltipIndex}
                 initial={{ opacity: 0, y: 10 }}
@@ -122,7 +122,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
               >
                 {tooltipMessages[currentTooltipIndex]}
               </motion.p>
-              <ArrowRight className="ml-2 h-2 w-2 md:h-4 md:w-4 text-white" />
+              <ArrowRight className="ml-2 h-4 w-4 text-white" />
             </div>
 
             {/* Tooltip arrow - positioned on the right side */}

@@ -7,10 +7,10 @@ import {
 import { z } from 'zod';
 
 const FormSchema = z.object({
-  name: z.string().min(3, 'Name is required'),
+  name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email address'),
-  subject: z.string().min(3, 'Subject is required').max(80, 'Write under 80 Characters!'),
-  message: z.string().min(3, 'Message is required'),
+  subject: z.string().min(1, 'Subject is required').max(80, 'Write under 80 Characters!'),
+  message: z.string().min(1, 'Message is required'),
 });
 
 const apiInstance = new TransactionalEmailsApi();
