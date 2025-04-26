@@ -101,7 +101,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   }
 
   return (
-    <div className="fixed bottom-5 right-4 md:bottom-6 md:right-6 z-50 flex items-end">
+    <div className="fixed right-4 bottom-6 md:right-6 z-40 flex items-end">
       <AnimatePresence>
         {showTooltip && (
           <motion.div
@@ -109,7 +109,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.8, x: 20 }}
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            className="mb-1 md:mb-2 mr-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 p-2 sm:px-5 sm:py-3 shadow-lg relative"
+            className="mb-1 md:mb-2 mr-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 p-2 sm:px-5 py-3 shadow-lg relative"
           >
             <div className="flex items-center">
               <MessageSquare className="mr-2 h-4 w-4 text-white" />

@@ -96,7 +96,6 @@ export default function RootLayout({
           message="Hello, I'm interested in your services!"
           tooltipMessages={[
             "Hi, Need Our Help?",
-            "Chat with us on WhatsApp",
             "Contact us now!",
             "Need a quote?",
             "Get help instantly",
