@@ -143,7 +143,7 @@ const OutdoorServices = () => {
         <div className="max-w-7xl mx-auto px-5">
           <div className="mb-16 text-center">
             <h3 className="text-base text-accent font-medium sm:text-lg">
-              OutDoor Services
+              OutDoor Marketing
             </h3>
             <h2 className="text-5xl text-text font-semibold sm:text-6xl">
               Services
