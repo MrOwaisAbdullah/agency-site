@@ -1,4 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
+// Add theme color configuration
+export const themeColor = [
+  { media: "(prefers-color-scheme: light)", color: "#3a69ff" },
+  { media: "(prefers-color-scheme: dark)", color: "#3a69ff" },
+];
 
 export const metadata: Metadata = {
   title: {
@@ -34,14 +48,6 @@ export const metadata: Metadata = {
     telephone: false,
     email: false,
     address: false,
-  },
-  themeColor: "#3a69ff",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover",
   },
   manifest: "/manifest.json",
   icons: {

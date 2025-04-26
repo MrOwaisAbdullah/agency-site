@@ -101,7 +101,7 @@ export default function AppDevelopmentService() {
       </section>
 
       {/* Our Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Our <span className="text-accent">App Projects</span>
@@ -110,9 +110,9 @@ export default function AppDevelopmentService() {
             Take a look at some of the apps we&apos;ve helped bring to life — built for performance, usability, and scale.
           </p>
 
-          {/* <Projects service="App Development" /> */}
+          <Projects service="App Development" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUsSection

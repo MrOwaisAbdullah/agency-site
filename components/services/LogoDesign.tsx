@@ -101,7 +101,7 @@ export default function LogoDesignService() {
       </section>
 
       {/* Our Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Logos That <span className="text-accent">Stick</span>
@@ -110,9 +110,9 @@ export default function LogoDesignService() {
             Scroll through some of our past logo design work — bold marks, clean lines, and memorable visuals that help brands stay top-of-mind.
           </p>
 
-          {/* <Projects service="Logo Design" /> */}
+          <Projects service="Logo Design" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUsSection

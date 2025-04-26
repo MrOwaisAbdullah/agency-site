@@ -1,5 +1,3 @@
-"use client";
-
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +6,8 @@ import Script from "next/script";
 import { Montserrat, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { InstallPrompt } from "@/components/ui/PwaManager";
-import { useEffect } from "react";
+import { ServiceWorkerProvider } from "@/components/ServiceWorkerProvider";
+import WhatsAppButton from "@/components/ui/WhatsappButton";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,7 +22,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-export { metadata } from "@/app/layout-metadata";
+export { metadata, viewport, themeColor } from "./layout-metadata";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -54,24 +53,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/sw.js")
-          .then((registration) => {
-            console.log(
-              "Service Worker registered with scope:",
-              registration.scope
-            );
-          })
-          .catch((error) => {
-            console.error("Service Worker registration failed:", error);
-          });
-      });
-    }
-  }, []);
-
   return (
     <html
       lang="en"
@@ -102,12 +83,26 @@ export default function RootLayout({
         />
       </head>
       <body className={`${montserrat.className} ${poppins.className}`}>
+        <ServiceWorkerProvider />
         <FloatingNavbar />
         <Header />
         {children}
         <Footer />
         <InstallPrompt />
         <Analytics />
+        {/* WhatsApp Button */}
+        <WhatsAppButton
+          phoneNumber="+1234567890"
+          message="Hello, I'm interested in your services!"
+          tooltipMessages={[
+            "Hi, Need Our Help?",
+            "Chat with us on WhatsApp",
+            "Contact us now!",
+            "Need a quote?",
+            "Get help instantly",
+          ]}
+          initialDelay={5000}
+        />
       </body>
     </html>
   );

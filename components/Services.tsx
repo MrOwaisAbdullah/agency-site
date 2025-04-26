@@ -6,6 +6,13 @@ import FadeInSection from "./FadeInSection";
 
 const allServices = [
   {
+    image: "/assets/services/logo.jpg",
+    title: "Logo Design",
+    description:
+      "Compeling content that tells your brand story and connects with your audience across all platforms.",
+    link: "/services/logo-design",
+  },
+  {
     image: "/assets/services/web-development.jpg",
     title: "Web Development",
     description:
@@ -13,18 +20,18 @@ const allServices = [
     link: "/services/web-development",
   },
   {
-    image: "/assets/services/influencer-marketing.jpg",
-    title: "Influencer Marketing",
-    description:
-      "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
-    link: "/services/influencer-marketing",
-  },
-  {
     image: "/assets/services/app-development.jpg",
     title: "App Development",
     description:
       "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
     link: "/services/app-development",
+  },
+  {
+    image: "/assets/services/influencer-marketing.jpg",
+    title: "Influencer Marketing",
+    description:
+      "Data analysis and reporting to measure performance and optimize your digital marketing strategies.",
+    link: "/services/influencer-marketing",
   },
   {
     image: "/assets/services/seo.jpg",
@@ -41,13 +48,6 @@ const allServices = [
     link: "/services/ui-ux-design",
   },
   {
-    image: "/assets/services/digital-marketing.jpg",
-    title: "Digital Marketing",
-    description:
-      "Data-driven marketing campaigns that connect with your audience and convert visitors into loyal customers.",
-    link: "/services/digital-marketing",
-  },
-  {
     image: "/assets/services/events.jpg",
     title: "Events Management",
     description:
@@ -55,11 +55,11 @@ const allServices = [
     link: "/services/events-management",
   },
   {
-    image: "/assets/services/logo.jpg",
-    title: "Logo Design",
+    image: "/assets/services/digital-marketing.jpg",
+    title: "Digital Marketing",
     description:
-      "Compeling content that tells your brand story and connects with your audience across all platforms.",
-    link: "/services/logo-design",
+      "Data-driven marketing campaigns that connect with your audience and convert visitors into loyal customers.",
+    link: "/services/digital-marketing",
   },
   {
     image: "/assets/services/outdoor-marketing.jpg",

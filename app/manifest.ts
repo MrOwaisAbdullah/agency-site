@@ -46,13 +46,5 @@ export default function manifest(): MetadataRoute.Manifest {
         description: "View our services",
       },
     ],
-    screenshots: [
-      {
-        src: "/assets/screenshot-1.jpg",
-        sizes: "1280x720",
-        type: "image/jpeg",
-        form_factor: "wide",
-      },
-    ],
   };
 }

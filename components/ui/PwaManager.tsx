@@ -86,7 +86,7 @@ export function InstallPrompt() {
 
     window.addEventListener(
       "beforeinstallprompt",
-      handleBeforeInstallPrompt as any
+      (e: Event) => handleBeforeInstallPrompt(e as BeforeInstallPromptEvent)
     );
 
     // Check if we have a deferred prompt
@@ -104,7 +104,7 @@ export function InstallPrompt() {
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
-        handleBeforeInstallPrompt as any
+        (e: Event) => handleBeforeInstallPrompt(e as BeforeInstallPromptEvent)
       );
     };
   }, [displayCount, wasManuallyClosed, isVisible, isStandalone]);
@@ -114,10 +114,14 @@ export function InstallPrompt() {
     const checkPlatform = () => {
       const userAgent = window.navigator.userAgent.toLowerCase();
       setIsIOS(/iphone|ipad|ipod/.test(userAgent));
-      setIsStandalone(
-        window.matchMedia("(display-mode: standalone)").matches ||
-          (window.navigator as any).standalone === true
-      );
+            setIsStandalone(
+              window.matchMedia("(display-mode: standalone)").matches ||
+              ('standalone' in window.navigator && (window.navigator as NavigatorStandalone).standalone === true)
+            );
+      
+      interface NavigatorStandalone extends Navigator {
+        standalone?: boolean;
+      }
     };
 
     const handleOnlineStatus = () => setIsOnline(navigator.onLine);

@@ -100,7 +100,7 @@ export default function EventsManagementService() {
       </section>
 
       {/* Our Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Past <span className="text-accent">Event Highlights</span>
@@ -109,9 +109,9 @@ export default function EventsManagementService() {
             From mall activations to exhibitions, here&apos;s how we&apos;ve pulled off events that delivered - in reach, impact, and vibe.
           </p>
 
-          {/* <Projects service="Event Management" /> */}
+          <Projects service="Event Management" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUsSection

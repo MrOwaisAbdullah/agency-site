@@ -14,6 +14,7 @@ import WhyChooseUsSection from "../WhyChooseUs";
 import FadeInSection from "../FadeInSection";
 import FaqSection from "../Faq";
 import ServiceHeroSection from "../ServiceHero";
+import OutdoorServices from "../OutdoorServices";
 // import Projects from "../Projects";
 
 export default function OutdoorMarketingService() {
@@ -104,8 +105,10 @@ export default function OutdoorMarketingService() {
         </div>
       </section>
 
+      <OutdoorServices />
+
       {/* Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Outdoor Work That <span className="text-accent">Stands Out</span>
@@ -115,9 +118,9 @@ export default function OutdoorMarketingService() {
             strong messaging and strategic placement that brings results.
           </p>
 
-          {/* <Projects service="Outdoor Marketing" /> */}
+          <Projects service="Outdoor Marketing" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us */}
       <WhyChooseUsSection

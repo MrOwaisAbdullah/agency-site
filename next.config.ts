@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const securityHeaders = [
   {
@@ -62,6 +63,47 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Optimize webpack configuration
+    config.optimization = {
+      ...config.optimization,
+      minimize: true,
+      splitChunks: {
+        chunks: "all",
+        maxInitialRequests: 25,
+        minSize: 20000,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor",
+            chunks: "all",
+          },
+        },
+      },
+    };
+
+    // Add memory optimization for production builds
+    if (!dev && !isServer) {
+      config.cache = {
+        type: "filesystem",
+        buildDependencies: {
+          config: [__filename],
+        },
+        cacheDirectory: path.resolve(process.cwd(), ".next/cache/webpack"),
+        maxAge: 604800000, // 1 week
+      };
+    }
+
+    // Add buffer size limit to prevent allocation errors
+    config.performance = {
+      ...config.performance,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+      hints: false,
+    };
+
+    return config;
   },
 };
 

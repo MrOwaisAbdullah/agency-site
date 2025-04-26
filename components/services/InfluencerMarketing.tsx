@@ -101,7 +101,7 @@ export default function InfluencerMarketingService() {
       </section>
 
       {/* Our Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Our Recent <span className="text-accent">Influencer Collabs</span>
@@ -110,9 +110,9 @@ export default function InfluencerMarketingService() {
             Check out how we&apos;ve helped brands connect with creators that get real views, real shares, and real results.
           </p>
 
-          {/* <Projects service="Influencer Marketing" /> */}
+          <Projects service="Influencer Marketing" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUsSection

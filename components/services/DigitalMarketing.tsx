@@ -101,7 +101,7 @@ export default function DigitalMarketingService() {
       </section>
 
       {/* Our Projects Section */}
-      <section className="max-w-7xl mx-auto py-20 px-4">
+      {/* <section className="max-w-7xl mx-auto py-20 px-4">
         <FadeInSection>
           <h2 className="text-3xl text-center md:text-4xl font-bold mb-10 font-montserrat">
             Our Recent <span className="text-accent">Marketing Campaigns</span>
@@ -110,9 +110,9 @@ export default function DigitalMarketingService() {
             See how we&apos;ve helped brands grow with paid ads, conversion tracking, and full-funnel strategies that actually deliver.
           </p>
 
-          {/* <Projects service="Digital Marketing" /> */}
+          <Projects service="Digital Marketing" />
         </FadeInSection>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <WhyChooseUsSection
