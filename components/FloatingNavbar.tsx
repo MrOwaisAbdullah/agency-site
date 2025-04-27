@@ -1,14 +1,12 @@
 import React from "react";
 import { FloatingNav } from "./ui/FloatingNav";
-import { FaHome } from "react-icons/fa";
-import { GrProjects, GrServices } from "react-icons/gr";
-import { IoPerson } from "react-icons/io5";
+import { BadgeInfo, FolderKanban, House, MonitorCog } from "lucide-react";
 
 const defaultNavItems: { name: string; link: string; icon: JSX.Element }[] = [
-  { name: "Home", link: "/", icon: <FaHome /> },
-  { name: "About Us", link: "/about", icon: <IoPerson /> },
-  { name: "Our Projects", link: "/projects", icon: <GrProjects /> },
-  { name: "Our Services", link: "/services", icon: <GrServices /> },
+  { name: "Home", link: "/", icon: <House /> },
+  { name: "About Us", link: "/about", icon: <BadgeInfo /> },
+  { name: "Our Projects", link: "/projects", icon: <FolderKanban /> },
+  { name: "Our Services", link: "/services", icon: <MonitorCog /> },
 ];
 
 const FloatingNavbar = () => {

@@ -5,12 +5,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "App Development Services",
   description:
-    "Custom mobile and web application development services. We build scalable, secure, and user-friendly applications for your business needs.",
+    "Custom mobile app development services to bring your ideas to life with cutting-edge technology and user-centric design.",
   openGraph: {
     title: "App Development Services | Burraq Digits",
     description:
-      "Custom mobile and web application development services. We build scalable, secure, and user-friendly applications for your business needs.",
+      "Custom mobile app development services to bring your ideas to life with cutting-edge technology and user-centric design.",
     url: "https://burraqdigits.com/services/app-development",
+    images: [
+      {
+        url: "/assets/services/app-development.jpg",
+        width: 1200,
+        height: 630,
+        alt: "App Development Services - Burraq Digits",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "App Development Services | Burraq Digits",
+    description:
+      "Custom mobile app development services to bring your ideas to life with cutting-edge technology and user-centric design.",
+    images: ["/assets/services/app-development.jpg"],
   },
   alternates: {
     canonical: "/services/app-development",

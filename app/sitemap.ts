@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
@@ -41,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "influencer-marketing",
     "logo-design",
     "events-management",
+    "outdoor-marketing",
   ];
 
   const serviceRoutes = services.map((service) => ({

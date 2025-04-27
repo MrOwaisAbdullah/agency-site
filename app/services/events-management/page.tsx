@@ -5,12 +5,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Events Management Services",
   description:
-    "Professional event management services for digital and physical events. We handle planning, execution, and promotion to ensure successful events.",
+    "Professional events planning and management services to create memorable experiences for your brand and audience.",
   openGraph: {
     title: "Events Management Services | Burraq Digits",
     description:
-      "Professional event management services for digital and physical events. We handle planning, execution, and promotion to ensure successful events.",
+      "Professional events planning and management services to create memorable experiences for your brand and audience.",
     url: "https://burraqdigits.com/services/events-management",
+    images: [
+      {
+        url: "/assets/services/events-management.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Events Management Services - Burraq Digits",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Events Management Services | Burraq Digits",
+    description:
+      "Professional events planning and management services to create memorable experiences for your brand and audience.",
+    images: ["/assets/services/events-management.jpg"],
   },
   alternates: {
     canonical: "/services/events-management",

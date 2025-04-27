@@ -5,14 +5,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SEO Services",
   description:
-    "Burraq Digits is a leading SEO service provider, offering tailored strategies to enhance your online visibility and drive organic traffic. Our expert team specializes in on-page and off-page optimization, keyword research, and content marketing to ensure your website ranks higher on search engines. Partner with us for effective SEO solutions that deliver results.",
-  keywords:
-    "SEO, Search Engine Optimization, SEO Services, Digital Marketing, Burraq Digits",
+    "Boost your website's visibility and rankings with our professional SEO services.",
   openGraph: {
-    title: "Search Engine Optimization Service | Burraq Digits",
+    title: "SEO Services | Burraq Digits",
     description:
-      "Burraq Digits is a leading SEO service provider, offering tailored strategies to enhance your online visibility and drive organic traffic. Our expert team specializes in on-page and off-page optimization, keyword research, and content marketing to ensure your website ranks higher on search engines. Partner with us for effective SEO solutions that deliver results.",
+      "Boost your website's visibility and rankings with our professional SEO services.",
     url: "https://burraqdigits.com/services/seo",
+    images: [
+      {
+        url: "/assets/services/seo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SEO Services - Burraq Digits",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO Services | Burraq Digits",
+    description:
+      "Boost your website's visibility and rankings with our professional SEO services.",
+    images: ["/assets/services/seo.jpg"],
   },
   alternates: {
     canonical: "/services/seo",
