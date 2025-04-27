@@ -43,7 +43,7 @@ export async function sendContactFormEmail(formData: FormData) {
   const { name, email, subject, message } = data;
 
   const sendSmtpEmail = {
-    sender: { name: 'Burraq Digits', email: 'admin@burraqdigits.com' },
+    sender: { name: 'Burraq Digits', email: 'info@burraqdigits.com' },
     to: [{ email: 'info@burraqdigits.com' }],
     subject: `New Contact Form Submission: ${subject}`,
     htmlContent: `

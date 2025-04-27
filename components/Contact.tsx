@@ -89,10 +89,10 @@ const Contact = () => {
                   EMAIL
                 </h2>
                 <Link
-                  href="mailto:contact@burraqdigits.com"
+                  href="mailto:info@burraqdigits.com"
                   className="text-accent leading-relaxed"
                 >
-                  contact@burraqdigits.com
+                  info@burraqdigits.com
                 </Link>
               </div>
               <div>

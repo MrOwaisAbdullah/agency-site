@@ -86,7 +86,7 @@ export const FloatingNav = ({
           <HoverBorderGradient
             containerClassName="rounded-full"
             as="button"
-            className="bg-background text-white hover:text-accent flex items-center space-x-2"
+            className="bg-background text-white hover:text-accent flex items-center text-xs md:text-sm space-x-2"
           >
             <span>Contact Us</span>
           </HoverBorderGradient>

@@ -54,7 +54,7 @@ export default function Footer() {
 
               <div className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-[#3a69ff]" />
-                <span className="text-[#e5e7eb]">contact@burraqdigits.com</span>
+                <span className="text-[#e5e7eb]">info@burraqdigits.com</span>
               </div>
             </div>
 
