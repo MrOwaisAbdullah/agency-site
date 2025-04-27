@@ -43,8 +43,8 @@ export async function sendContactFormEmail(formData: FormData) {
   const { name, email, subject, message } = data;
 
   const sendSmtpEmail = {
-    sender: { name: 'Burraq Digits', email: 'contact@burraqdigits.com' },
-    to: [{ email: 'contact@burraqdigits.com' }],
+    sender: { name: 'Burraq Digits', email: 'admin@burraqdigits.com' },
+    to: [{ email: 'info@burraqdigits.com' }],
     subject: `New Contact Form Submission: ${subject}`,
     htmlContent: `
       <p><strong>Name:</strong> ${name}</p>
@@ -55,7 +55,7 @@ export async function sendContactFormEmail(formData: FormData) {
   };
 
   const confirmationEmail = {
-    sender: { name: 'Burraq Digits', email: 'contact@burraqdigits.com' },
+    sender: { name: 'Burraq Digits', email: 'info@burraqdigits.com' },
     to: [{ email }],
     subject: 'Thank You for Contacting Burraq Digits',
     htmlContent: `
