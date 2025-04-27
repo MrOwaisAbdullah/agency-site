@@ -5,7 +5,6 @@ import FloatingNavbar from "@/components/FloatingNavbar";
 import Script from "next/script";
 import { Montserrat, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { InstallPrompt } from "@/components/ui/PwaManager";
 import { ServiceWorkerProvider } from "@/components/ServiceWorkerProvider";
 import WhatsAppButton from "@/components/ui/WhatsappButton";
 
@@ -88,7 +87,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <InstallPrompt />
         <Analytics />
         {/* WhatsApp Button */}
         <WhatsAppButton
