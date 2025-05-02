@@ -2,6 +2,7 @@ import React from "react";
 import About from "@/components/About";
 import CtaSection from "@/components/CtaSection";
 import { Metadata } from "next";
+import LogoSlider from "@/components/ui/LogoSlider";
 
 export const dynamic = "force-static";
 
@@ -24,7 +25,14 @@ const about = () => {
   return (
     <>
       <About />
-      <div className="h-44"></div>
+      <div className="h-20"></div>
+            <h3 className="text-base text-center text-accent font-medium sm:text-lg">
+              Brands We Worked For
+            </h3>
+            <h2 className="text-5xl text-center text-text font-semibold sm:text-6xl">
+              Our Clients
+            </h2>
+      <LogoSlider />
 
       {/* CTA Section */}
       <CtaSection

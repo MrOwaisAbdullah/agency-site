@@ -5,11 +5,25 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import FadeInSection from "./FadeInSection";
 
 const outdoorSubServices = [
+  {
+    image: "/assets/services/expo.jpg",
+    title: "Expo Branding",
+    description:
+      "Custom expo branding and booth designs that help you grab attention and dominate the exhibition floor.",
+    link: "/contact",
+  },
     {
       image: "/assets/services/outdoor-marketing.jpg",
       title: "School Sport Activity",
       description:
         "Become a brand activator through school events — strengthening community ties and enhancing brand presence.",
+      link: "/contact",
+    },
+    {
+      image: "/assets/services/billboard.jpg",
+      title: "Billboard Advertising",
+      description:
+        "High-visibility billboard campaigns in premium locations — perfect for brand awareness and mass reach.",
       link: "/contact",
     },
     {
@@ -34,14 +48,14 @@ const outdoorSubServices = [
       link: "/contact",
     },
     {
-      image: "/assets/services/outdoor-marketing.jpg",
+      image: "/assets/services/bus-advertisement.jpg",
       title: "Bus Shelter Advertisement",
       description:
         "High-impact transit shelter ads that reach daily commuters with strategic placement and creative visuals.",
       link: "/contact",
     },
     {
-      image: "/assets/services/outdoor-marketing.jpg",
+      image: "/assets/services/rickshaw.jpg",
       title: "Advertisement on Rickshaw",
       description:
         "Affordable and widespread city advertising through customized rickshaw branding campaigns.",
@@ -52,6 +66,13 @@ const outdoorSubServices = [
       title: "Vinyl Pasting on Vehicles",
       description:
         "High-quality vinyl wraps for cars and fleets — durable, visible, and designed for maximum brand exposure.",
+      link: "/contact",
+    },
+    {
+      image: "/assets/services/bus-advertisement.jpg",
+      title: "People Bus Branding Ad",
+      description:
+        "Transform public buses into moving billboards — city-wide exposure with large, bold designs.",
       link: "/contact",
     },
     {
@@ -77,23 +98,9 @@ const outdoorSubServices = [
     },
     {
       image: "/assets/services/outdoor-marketing.jpg",
-      title: "People Bus Branding Ad",
-      description:
-        "Transform public buses into moving billboards — city-wide exposure with large, bold designs.",
-      link: "/contact",
-    },
-    {
-      image: "/assets/services/outdoor-marketing.jpg",
       title: "Shop Signage",
       description:
         "Professional storefront signs that guide customers, boost visibility, and make a lasting impression.",
-      link: "/contact",
-    },
-    {
-      image: "/assets/services/outdoor-marketing.jpg",
-      title: "Billboard Advertising",
-      description:
-        "High-visibility billboard campaigns in premium locations — perfect for brand awareness and mass reach.",
       link: "/contact",
     },
     {
@@ -115,13 +122,6 @@ const outdoorSubServices = [
       title: "Concert/Event Branding",
       description:
         "Bold event branding solutions — banners, signage, and visuals that enhance event experience and brand impact.",
-      link: "/contact",
-    },
-    {
-      image: "/assets/services/outdoor-marketing.jpg",
-      title: "Expo Branding",
-      description:
-        "Custom expo branding and booth designs that help you grab attention and dominate the exhibition floor.",
       link: "/contact",
     },
   ];
