@@ -92,7 +92,7 @@ const ProjectTabs = ({
                         <Image
                           priority={index < 6} // Prioritize loading first 6 images
                           src={project.image || "/placeholder.svg"}
-                          alt="Projects"
+                          alt={project.title}
                           width={500}
                           height={300}
                           className="h-full w-full object-cover transition-transform duration-700"
