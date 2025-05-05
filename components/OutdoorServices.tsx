@@ -111,10 +111,17 @@ const outdoorSubServices = [
       link: "/contact",
     },
     {
-      image: "/assets/services/outdoor-marketing.jpg",
+      image: "/assets/services/smd-van-ad.jpg",
       title: "SMD Float Van Advertising",
       description:
         "Eye-catching mobile LED screen ads that light up busy streets and major events for maximum exposure.",
+      link: "/contact",
+    },
+    {
+      image: "/assets/services/pedestrian-bridge.jpg",
+      title: "Pedestrian Bridge Branding",
+      description:
+        "Strategic pedestrian bridge ads that capture the attention of foot traffic and enhance brand visibility.",
       link: "/contact",
     },
     {
