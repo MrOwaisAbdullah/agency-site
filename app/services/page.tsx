@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const services = () => {
   return (
     <>
-      <Services />
+      <Services initialVisibleCount={9}/>
       <div className="h-44"></div>
       {/* CTA Section */}
       <CtaSection

@@ -63,18 +63,28 @@ const allServices = [
   },
   {
     image: "/assets/services/outdoor-marketing.jpg",
-    title : "Outdoor Marketing",
+    title: "Outdoor Marketing",
     description:
-        "Innovative outdoor marketing strategies that capture attention and drive foot traffic to your business.",
+      "Innovative outdoor marketing strategies that capture attention and drive foot traffic to your business.",
     link: "/services/outdoor-marketing",
-  }
+  },
 ];
 
-const Services = () => {
-  const [visibleCount, setVisibleCount] = useState(6);
+interface ServicesProps {
+  initialVisibleCount?: number;
+  loadMoreCount?: number;
+}
+
+const Services = ({
+  initialVisibleCount = 6,
+  loadMoreCount = 3,
+}: ServicesProps) => {
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => Math.min(prevCount + 3, allServices.length));
+    setVisibleCount((prevCount) =>
+      Math.min(prevCount + loadMoreCount, allServices.length)
+    );
   };
 
   const visibleServices = allServices.slice(0, visibleCount);
