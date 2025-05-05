@@ -2,14 +2,15 @@ import type React from "react"
 import { cn } from "@/lib/utils"
 
 interface PulsingLoaderProps {
-  size?: "sm" | "md" | "lg" | "xl"
-  color?: "primary" | "secondary" | "accent" | "success" | "warning" | "error"
+  size?: "sm" | "md" | "lg" | "xl" | "xs"
+  color?: "primary" | "secondary" | "accent" | "success" | "warning" | "error" | "white"
   className?: string
 }
 
 export const PulsingLoader: React.FC<PulsingLoaderProps> = ({ size = "md", color = "primary", className }) => {
   // Base size mapping
   const sizeClasses = {
+    xs: 1,
     sm: 4,
     md: 8,
     lg: 12,
@@ -24,6 +25,7 @@ export const PulsingLoader: React.FC<PulsingLoaderProps> = ({ size = "md", color
     success: "bg-green-500",
     warning: "bg-yellow-500",
     error: "bg-red-500",
+    white: "bg-white",
   }
 
   // Get the numeric size value

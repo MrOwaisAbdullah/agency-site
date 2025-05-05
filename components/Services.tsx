@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
 import FadeInSection from "./FadeInSection";
+import { PulsingLoader } from "./ui/PulseLoader";
 
 const allServices = [
   {
@@ -80,11 +81,24 @@ const Services = ({
   loadMoreCount = 3,
 }: ServicesProps) => {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLoadMore = () => {
-    setVisibleCount((prevCount) =>
-      Math.min(prevCount + loadMoreCount, allServices.length)
-    );
+  // Preload all images for better performance
+  useEffect(() => {
+    allServices.forEach((service) => {
+      if (service.image) {
+        const img = new Image();
+        img.src = service.image;
+      }
+    });
+  }, []);
+
+  const handleLoadMore = async () => {
+    setIsLoading(true);
+    // Short delay for UI feedback
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    setVisibleCount((prev) => prev + loadMoreCount);
+    setIsLoading(false);
   };
 
   const visibleServices = allServices.slice(0, visibleCount);
@@ -118,9 +132,16 @@ const Services = ({
             <div className="mt-12 flex justify-center">
               <button
                 onClick={handleLoadMore}
+                disabled={isLoading}
                 className="font-poppins flex items-center text-center justify-center text-white bg-gradient-to-br from-blue-900 via-accent to-blue-700 hover:from-blue-800 py-2 px-6 rounded transition-all duration-300 transform shadow-lg shadow-accent/20 text-md font-semibold"
               >
-                Load More
+                {isLoading ? (
+                  <>
+                    <PulsingLoader size="xs" color="white" />
+                  </>
+                ) : (
+                  "Load More"
+                )}
               </button>
             </div>
           )}
