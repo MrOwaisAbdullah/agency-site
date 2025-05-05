@@ -69,7 +69,7 @@ const outdoorSubServices = [
       link: "/contact",
     },
     {
-      image: "/assets/services/bus-advertisement.jpg",
+      image: "/assets/services/people-bus-branding.jpg",
       title: "People Bus Branding Ad",
       description:
         "Transform public buses into moving billboards — city-wide exposure with large, bold designs.",
