@@ -81,7 +81,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${montserrat.className} ${poppins.className}`}>
+      <body>
         <ServiceWorkerProvider />
         <FloatingNavbar />
         <Header />
