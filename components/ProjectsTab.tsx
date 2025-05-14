@@ -56,7 +56,7 @@ const ProjectTabs = ({
             See Our Work
           </h3>
           <h2 className="text-5xl text-text font-semibold sm:text-6xl">
-            Portfolio
+            Projects
           </h2>
         </div>
 
