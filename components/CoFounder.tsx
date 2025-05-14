@@ -65,11 +65,9 @@ const CoFounders = () => {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-mutedforeground hover:text-accent transition-colors duration-300"
+                    className="absolute flex justify-center items-center bottom-2 right-0 bg-gradient-to-br from-accent/80 via-accent to-accent/90 rounded-full p-2 shadow-lg transform group-hover:scale-110 transition-all duration-300"
                   >
-                    <div className="absolute flex justify-center items-center bottom-2 right-0 bg-gradient-to-br from-accent/80 via-accent to-accent/90 rounded-full p-2 shadow-lg transform group-hover:scale-110 transition-all duration-300">
-                      <FaWhatsapp className="text-text text-xl" />
-                    </div>
+                    <FaWhatsapp className="text-text text-xl" />
                   </a>
                 </div>
                 <div className="text-center md:text-left">
@@ -87,7 +85,7 @@ const CoFounders = () => {
                     className="inline-flex items-center gap-2 text-mutedforeground hover:text-accent transition-colors duration-300"
                   >
                     <FaWhatsapp className="text-accent" />
-                    <span>{founder.whatsapp}</span>
+                    <span className="text-gray-500 hover:text-accent">{founder.whatsapp}</span>
                   </a>
                 </div>
               </div>
