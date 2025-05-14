@@ -29,10 +29,10 @@ const about = () => {
       <CoFounders />
       <div className="h-20"></div>
             <h3 className="text-base text-center text-accent font-medium sm:text-lg">
-              Brands We Worked For
-            </h3>
-            <h2 className="text-5xl text-center text-text font-semibold sm:text-6xl">
               Our Clients
+            </h3>
+            <h2 className="text-2xl text-center text-text font-semibold sm:text-3xl">
+              Brands We Worked For
             </h2>
       <LogoSlider />
 

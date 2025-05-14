@@ -32,7 +32,7 @@ const CoFounders = () => {
           <h3 className="text-base text-accent font-medium sm:text-lg">
             Leadership
           </h3>
-          <h2 className="sm:text-3xl text-2xl text-text font-medium title-font mb-4">
+          <h2 className="sm:text-3xl text-2xl text-text font-semibold title-font mb-4">
             Meet Our Co-Founders
           </h2>
           <p className="text-mutedforeground max-w-2xl mx-auto">
