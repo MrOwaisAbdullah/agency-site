@@ -102,6 +102,9 @@ const Contact = () => {
                 <Link href={'tel:+923202019118'}>
                   <p className="leading-relaxed">+923202019118</p>
                 </Link>
+                <Link href={'tel:+923343473628'}>
+                  <p className="leading-relaxed">+923343473628</p>
+                </Link>
               </div>
             </div>
           </div>

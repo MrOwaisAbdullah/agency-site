@@ -3,6 +3,7 @@ import About from "@/components/About";
 import CtaSection from "@/components/CtaSection";
 import { Metadata } from "next";
 import LogoSlider from "@/components/ui/LogoSlider";
+import CoFounders from "@/components/CoFounder";
 
 export const dynamic = "force-static";
 
@@ -25,6 +26,7 @@ const about = () => {
   return (
     <>
       <About />
+      <CoFounders />
       <div className="h-20"></div>
             <h3 className="text-base text-center text-accent font-medium sm:text-lg">
               Brands We Worked For

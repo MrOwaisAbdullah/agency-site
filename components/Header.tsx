@@ -19,7 +19,7 @@ const services = [
   { name: "Influencer Marketing", href: "/services/influencer-marketing" },
   { name: "Logo Design", href: "/services/logo-design" },
   { name: "Events Management", href: "/services/events-management" },
-  { name: "Outdoor Marketing", href: "/services/outdoor-marketing" },
+  { name: "Outdoor Marketing", href: "/services/outdoor-marketing-in-pakistan" },
 ];
 
 const Header = () => {
