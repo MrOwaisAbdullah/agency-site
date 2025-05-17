@@ -59,14 +59,14 @@ export default function RootLayout({
       style={{ colorScheme: "dark" }}
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="e-FTBsUIGp8fWOhMM2-EAXuIP5uyaE-_FojdOIEdFzQ"
+        />
         <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         />
         <Script
           id="google-analytics"
